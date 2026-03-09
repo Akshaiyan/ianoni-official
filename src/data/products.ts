@@ -131,11 +131,15 @@ export interface Product {
   gallery?: string[];
   badge?: string;
   description: string;
+  longDescription?: string;
+  whyChoose?: string[];
+  whoIsItFor?: string[];
   features: string[];
   specs: {
     weight?: string;
     shape?: string;
     material?: string;
+    core?: string;
     balance?: string;
     level?: string;
     dimensions?: string;
@@ -143,7 +147,7 @@ export interface Product {
   isBestSeller?: boolean;
   isNew?: boolean;
   colorVariant?: string;
-  bestSellerOrder?: number; // For carousel display order
+  bestSellerOrder?: number;
   isStarterKit?: boolean;
   isBallType?: boolean;
 }
