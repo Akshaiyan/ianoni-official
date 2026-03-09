@@ -215,7 +215,63 @@ export default function ProductPage() {
                 {product.description}
               </p>
 
+              {product.longDescription && (
+                <p className="text-muted-foreground leading-relaxed">
+                  {product.longDescription}
+                </p>
+              )}
+
               <Separator />
+
+              {/* Why Choose */}
+              {product.whyChoose && product.whyChoose.length > 0 && (
+                <div className="space-y-3">
+                  <h3 className="font-semibold flex items-center gap-2">
+                    <Check className="h-5 w-5 text-primary" />
+                    Why Choose the {product.name}
+                  </h3>
+                  <div className="bg-primary/5 rounded-xl p-4 space-y-2">
+                    {product.whyChoose.map((item, i) => (
+                      <div key={i} className="flex items-center gap-2 text-sm">
+                        <Check className="h-4 w-4 text-primary shrink-0" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Who Is It For */}
+              {product.whoIsItFor && product.whoIsItFor.length > 0 && (
+                <div className="space-y-3">
+                  <h3 className="font-semibold">Who This Racket Is For</h3>
+                  <div className="bg-accent/30 rounded-xl p-4 space-y-2">
+                    {product.whoIsItFor.map((item, i) => (
+                      <div key={i} className="flex items-center gap-2 text-sm">
+                        <ChevronRight className="h-4 w-4 text-primary shrink-0" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              <Separator />
+
+              {/* Specs table */}
+              {Object.keys(product.specs).length > 0 && (
+                <div className="space-y-3">
+                  <h3 className="font-semibold">Specifications</h3>
+                  <div className="rounded-xl border overflow-hidden">
+                    {Object.entries(product.specs).filter(([, v]) => v).map(([key, value], i) => (
+                      <div key={key} className={`flex justify-between px-4 py-2.5 text-sm ${i % 2 === 0 ? 'bg-muted/30' : ''}`}>
+                        <span className="text-muted-foreground capitalize">{key}</span>
+                        <span className="font-medium">{value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               {/* Features */}
               {product.features.length > 0 && (
