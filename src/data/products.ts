@@ -131,14 +131,11 @@ export interface Product {
   gallery?: string[];
   badge?: string;
   description: string;
-  longDescription?: string;
-  whoIsItFor?: string[];
   features: string[];
   specs: {
     weight?: string;
     shape?: string;
     material?: string;
-    core?: string;
     balance?: string;
     level?: string;
     dimensions?: string;
@@ -146,7 +143,7 @@ export interface Product {
   isBestSeller?: boolean;
   isNew?: boolean;
   colorVariant?: string;
-  bestSellerOrder?: number;
+  bestSellerOrder?: number; // For carousel display order
   isStarterKit?: boolean;
   isBallType?: boolean;
 }
@@ -165,31 +162,24 @@ export const products: Product[] = [
     gallery: [pr8100RbMain, pr8100RbAngle, pr8100RbBall, pr8100RbAction, pr8100RbBalls, pr8100RbDetail, pr8100RbDetail2, pr8100RbPair, pr8100RbSpecs, pr8100RbCourt1, pr8100RbCourt2, pr8100RbLifestyle1, pr8100RbLifestyle2, pr8100RbPlayer, pr8100RbPlayers, pr8100RbGrip1, pr8100RbGrip2, pr8100RbPlayer2, pr8100RbPlayer3],
     badge: "Best Seller",
     colorVariant: "Red/Black",
-    description: "The Ianoni PR8100 carbon fibre padel racket is built for players progressing from beginner to intermediate level. Designed to offer a balanced mix of control and accessible power, it helps players improve consistency while maintaining strong shot performance.",
-    longDescription: "Choosing the right padel racket can make a huge difference to how quickly you improve. The PR8100 is designed to support players as they build confidence on court. Its balanced construction helps players generate controlled power while maintaining accuracy during volleys and defensive shots. The extended impact zone increases the usable hitting area, making the racket more forgiving for players still developing their timing. Combined with durable carbon fibre construction, the PR8100 offers excellent performance for players who want to improve their game without investing in an expensive premium racket.",
-    whoIsItFor: [
-      "Beginner padel players learning the game",
-      "Players moving from beginner to intermediate level",
-      "Social and club players looking for consistency",
-      "Anyone wanting a carbon fibre padel racket at great value",
-    ],
+    description: "Our flagship padel racket featuring 3-layer carbon fiber construction with Energy Transfer System for maximum power and control. The equidistant hole arrangement in groups of 3 strengthens the surface and improves durability.",
     features: [
-      "3-layer carbon fibre face for improved strength and durability",
-      "Extended impact zone to create a larger sweet spot",
-      "Balanced design combining control and power",
-      "Energy Transfer System for improved shot response",
-      "Comfortable anti-slip grip for confident handling",
+      "3-layer carbon fiber face",
+      "Energy Transfer System",
+      "Extended impact zone",
+      "Power Bower technology",
+      "Anti-slip grip design",
     ],
     specs: {
-      weight: "360g",
-      shape: "Hybrid",
-      material: "Carbon Fibre",
-      core: "EVA Foam",
+      weight: "12.5 oz (355g)",
+      dimensions: "26cm x 34cm x 3.7cm",
+      shape: "Round",
+      material: "3-Layer Carbon Fiber",
       balance: "Medium",
-      level: "Beginner to Intermediate",
+      level: "Intermediate-Advanced",
     },
     isBestSeller: true,
-    bestSellerOrder: 1,
+    bestSellerOrder: 1, // First in carousel
   },
   {
     id: "pr8100-blue-pink",
@@ -202,31 +192,24 @@ export const products: Product[] = [
     image: pr8100BpMain,
     gallery: [pr8100BpMain, pr8100BpAngle, pr8100BpBall, pr8100BpAction, pr8100BpBalls, pr8100BpDetail, pr8100BpDetail2, pr8100BpPair, pr8100BpPair2, pr8100BpSpecs, pr8100BpSpecs2, pr8100BpPlayer1, pr8100BpPlayer2, pr8100BpGrip1, pr8100BpGrip2, pr8100BpCourt1, pr8100BpCourt2, pr8100BpLifestyle1, pr8100BpLifestyle2, pr8100BpLifestyle3, pr8100BpPlayer3],
     colorVariant: "Blue/Pink",
-    description: "The Ianoni PR8100 carbon fibre padel racket is built for players progressing from beginner to intermediate level. Designed to offer a balanced mix of control and accessible power, it helps players improve consistency while maintaining strong shot performance.",
-    longDescription: "Choosing the right padel racket can make a huge difference to how quickly you improve. The PR8100 is designed to support players as they build confidence on court. Its balanced construction helps players generate controlled power while maintaining accuracy during volleys and defensive shots. The extended impact zone increases the usable hitting area, making the racket more forgiving for players still developing their timing. Combined with durable carbon fibre construction, the PR8100 offers excellent performance for players who want to improve their game without investing in an expensive premium racket.",
-    whoIsItFor: [
-      "Beginner padel players learning the game",
-      "Players moving from beginner to intermediate level",
-      "Social and club players looking for consistency",
-      "Anyone wanting a carbon fibre padel racket at great value",
-    ],
+    description: "Our flagship padel racket featuring 3-layer carbon fiber construction with Energy Transfer System for maximum power and control. The equidistant hole arrangement in groups of 3 strengthens the surface and improves durability.",
     features: [
-      "3-layer carbon fibre face for improved strength and durability",
-      "Extended impact zone to create a larger sweet spot",
-      "Balanced design combining control and power",
-      "Energy Transfer System for improved shot response",
-      "Comfortable anti-slip grip for confident handling",
+      "3-layer carbon fiber face",
+      "Energy Transfer System",
+      "Extended impact zone",
+      "Power Bower technology",
+      "Anti-slip grip design",
     ],
     specs: {
-      weight: "360g",
-      shape: "Hybrid",
-      material: "Carbon Fibre",
-      core: "EVA Foam",
+      weight: "12.5 oz (355g)",
+      dimensions: "26cm x 34cm x 3.7cm",
+      shape: "Round",
+      material: "3-Layer Carbon Fiber",
       balance: "Medium",
-      level: "Beginner to Intermediate",
+      level: "Intermediate-Advanced",
     },
     isBestSeller: true,
-    bestSellerOrder: 3,
+    bestSellerOrder: 3, // Third in carousel
   },
   {
     id: "pr8100-blue-orange",
@@ -239,31 +222,24 @@ export const products: Product[] = [
     image: pr8100BoMain,
     gallery: [pr8100BoMain, pr8100BoBall, pr8100BoAngle, pr8100BoLifestyle, pr8100BoLifestyle2, pr8100BoFront, pr8100BoPair, pr8100BoPlayer, pr8100BoDetail, pr8100BoHero, pr8100BoAction],
     colorVariant: "Blue/Orange",
-    description: "The Ianoni PR8100 carbon fibre padel racket is built for players progressing from beginner to intermediate level. Designed to offer a balanced mix of control and accessible power, it helps players improve consistency while maintaining strong shot performance.",
-    longDescription: "Choosing the right padel racket can make a huge difference to how quickly you improve. The PR8100 is designed to support players as they build confidence on court. Its balanced construction helps players generate controlled power while maintaining accuracy during volleys and defensive shots. The extended impact zone increases the usable hitting area, making the racket more forgiving for players still developing their timing. Combined with durable carbon fibre construction, the PR8100 offers excellent performance for players who want to improve their game without investing in an expensive premium racket.",
-    whoIsItFor: [
-      "Beginner padel players learning the game",
-      "Players moving from beginner to intermediate level",
-      "Social and club players looking for consistency",
-      "Anyone wanting a carbon fibre padel racket at great value",
-    ],
+    description: "Our flagship padel racket featuring 3-layer carbon fiber construction with Energy Transfer System for maximum power and control. The equidistant hole arrangement in groups of 3 strengthens the surface and improves durability.",
     features: [
-      "3-layer carbon fibre face for improved strength and durability",
-      "Extended impact zone to create a larger sweet spot",
-      "Balanced design combining control and power",
-      "Energy Transfer System for improved shot response",
-      "Comfortable anti-slip grip for confident handling",
+      "3-layer carbon fiber face",
+      "Energy Transfer System",
+      "Extended impact zone",
+      "Power Bower technology",
+      "Anti-slip grip design",
     ],
     specs: {
-      weight: "360g",
-      shape: "Hybrid",
-      material: "Carbon Fibre",
-      core: "EVA Foam",
+      weight: "12.5 oz (355g)",
+      dimensions: "26cm x 34cm x 3.7cm",
+      shape: "Round",
+      material: "3-Layer Carbon Fiber",
       balance: "Medium",
-      level: "Beginner to Intermediate",
+      level: "Intermediate-Advanced",
     },
     isBestSeller: true,
-    bestSellerOrder: 5,
+    bestSellerOrder: 5, // Fifth in carousel (second page)
   },
   // PR8200 Series
   {
