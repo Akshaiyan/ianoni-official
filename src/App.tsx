@@ -37,6 +37,7 @@ function AppContent() {
           <Route path="/guide" element={<GuidePage />} />
           <Route path="/guide/padel-101" element={<Padel101Page />} />
           <Route path="/guide/*" element={<GuidePage />} />
+          <Route path="/faq" element={<FAQPage />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/admin/reviews" element={<AdminReviewsPage />} />
