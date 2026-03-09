@@ -389,7 +389,7 @@ export const products: Product[] = [
     gallery: [pr8200SpMain, pr8200SpAngle, pr8200SpSide, pr8200SpDetail, pr8200SpAngle2, pr8200SpAction, pr8200SpGrip, pr8200SpDetail2],
     badge: "New",
     colorVariant: "Pink",
-    description: "The Super Power racket delivers advanced materials and refined balance for professional-level play.",
+    description: "The Super Power racket delivers advanced materials and refined balance for players looking to elevate their game with a standout design.",
     features: [
       "Advanced carbon composite",
       "Enhanced sweet spot",
@@ -398,11 +398,12 @@ export const products: Product[] = [
       "Tournament approved",
     ],
     specs: {
-      weight: "12.3 oz (350g)",
-      shape: "Round",
-      material: "Carbon Composite",
-      balance: "Medium-High",
-      level: "Advanced-Pro",
+      weight: "360g",
+      shape: "Hybrid",
+      material: "Carbon Fibre",
+      core: "EVA Foam",
+      balance: "Medium",
+      level: "Beginner to Intermediate",
     },
     isBestSeller: true,
     bestSellerOrder: 6, // Sixth in carousel (second page)
