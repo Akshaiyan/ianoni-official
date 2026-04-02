@@ -7,10 +7,42 @@ import { WhyIanoni } from "@/components/home/WhyIanoni";
 import { TrustSection } from "@/components/home/TrustSection";
 import { BestSellers } from "@/components/home/BestSellers";
 import { BeginnerHub } from "@/components/home/BeginnerHub";
+import { SEO } from "@/components/SEO";
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "IANONI",
+  url: "https://www.ianoni.co.uk",
+  logo: "https://www.ianoni.co.uk/favicon.png",
+  contactPoint: {
+    "@type": "ContactPoint",
+    email: "ianoni@tidytrade.ai",
+    contactType: "customer support",
+  },
+  sameAs: [],
+};
+
+const webSiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "IANONI",
+  url: "https://www.ianoni.co.uk",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: "https://www.ianoni.co.uk/padel?q={search_term_string}",
+    "query-input": "required name=search_term_string",
+  },
+};
 
 const Index = () => {
   return (
     <Layout>
+      <SEO
+        title="IANONI | Premium Carbon Fibre Padel Rackets – UK"
+        description="Shop IANONI carbon fibre padel rackets from £39.99. Designed for beginners to intermediate players. Free UK shipping, 1-year warranty & 30-day returns."
+        schema={[organizationSchema, webSiteSchema]}
+      />
       {/* 1. Hero with lifestyle shot + value prop + CTAs */}
       <HeroSection />
       

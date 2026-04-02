@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, ChevronRight, Target, Zap, Users, Trophy, TrendingUp, Heart } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 
 const whyGrowing = [
@@ -29,6 +30,10 @@ export default function Padel101Page() {
 
   return (
     <Layout>
+      <SEO
+        title="Padel 101: Complete Beginner's Guide to Padel – IANONI"
+        description="Learn the basics of padel — rules, scoring, court dimensions, equipment and tips for beginners. Your complete introduction to the fastest-growing sport in the UK."
+      />
       {/* Hero */}
       <section className="pt-28 pb-16 bg-gradient-to-br from-primary/10 to-background">
         <div className="container mx-auto px-4">

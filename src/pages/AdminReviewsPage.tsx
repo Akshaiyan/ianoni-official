@@ -3,6 +3,7 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/SEO";
 import { Input } from "@/components/ui/input";
 import { Star, Check, X, Trash2, Loader2, LogIn } from "lucide-react";
 import { toast } from "sonner";
@@ -123,6 +124,7 @@ export default function AdminReviewsPage() {
 
   return (
     <Layout>
+      <SEO title="Admin – IANONI" description="Admin panel." noindex={true} />
       <div className="pt-28 pb-20 container mx-auto px-4">
         <h1 className="text-3xl font-bold mb-2">Review Moderation</h1>
         <p className="text-muted-foreground mb-8">

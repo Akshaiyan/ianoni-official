@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Mail, Send, CheckCircle } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/SEO";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -32,6 +33,10 @@ export default function ContactPage() {
 
   return (
     <Layout>
+      <SEO
+        title="Contact IANONI | Get in Touch"
+        description="Have a question about IANONI padel rackets? Get in touch with our team. We're here to help with orders, returns, and anything else you need."
+      />
       <section className="pt-28 pb-16 bg-gradient-to-br from-primary/5 to-background">
         <div className="container mx-auto px-4">
           <motion.div

@@ -68,7 +68,7 @@ export function ProductCard({ product, index = 0, variant = "light" }: ProductCa
             <div className="absolute inset-0 flex items-center justify-center p-3">
               <img
                 src={product.image}
-                alt={product.name}
+                alt={`IANONI ${product.name}${product.colorVariant ? ` ${product.colorVariant}` : ""} padel racket`}
                 className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 drop-shadow-xl"
               />
             </div>

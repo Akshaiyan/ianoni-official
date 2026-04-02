@@ -5,19 +5,24 @@ import { ChevronRight, Loader2 } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { ProductCard } from "@/components/ui/ProductCard";
 import { products, getPadelRackets, type Product } from "@/data/products";
+import { SEO } from "@/components/SEO";
 
-const categoryInfo: Record<string, { title: string; description: string; emoji: string; filter: (p: Product) => boolean }> = {
+const categoryInfo: Record<string, { title: string; description: string; emoji: string; filter: (p: Product) => boolean; seoTitle: string; seoDescription: string }> = {
   padel: {
     title: "Padel Rackets",
     description: "Premium carbon fiber padel rackets designed for players of all skill levels",
     emoji: "🎾",
     filter: (p) => p.category === "padel" && !p.isStarterKit,
+    seoTitle: "Padel Rackets | Carbon Fibre Rackets from £39.99 – IANONI",
+    seoDescription: "Browse IANONI carbon fibre padel rackets. Lightweight, durable and designed for all skill levels. From £39.99 with free UK-wide shipping.",
   },
   accessories: {
     title: "Starter Kits & Accessories",
     description: "Curated bundles, premium balls, and everything you need",
     emoji: "🎾",
     filter: (p) => p.isStarterKit || p.isBallType || false,
+    seoTitle: "Padel Starter Kits & Accessories | IANONI",
+    seoDescription: "Shop IANONI padel starter kits, balls and accessories. Everything you need to start playing padel. From £6.99 with free UK-wide shipping.",
   },
 };
 
@@ -73,6 +78,10 @@ export default function CollectionPage() {
 
   return (
     <Layout>
+      <SEO
+        title={info.seoTitle}
+        description={info.seoDescription}
+      />
       <section className="pt-28 pb-12 bg-gradient-to-br from-surface to-background">
         <div className="container mx-auto px-4">
           <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">

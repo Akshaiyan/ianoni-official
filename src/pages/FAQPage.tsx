@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/SEO";
 import {
   Accordion,
   AccordionContent,
@@ -65,6 +66,10 @@ export default function FAQPage() {
 
   return (
     <Layout>
+      <SEO
+        title="Padel Racket FAQs | Common Questions Answered – IANONI"
+        description="Got questions about IANONI padel rackets? Find answers about racket specs, which model suits your level, pricing, shipping, warranty and more."
+      />
       {/* Hero */}
       <section className="pt-28 pb-16 bg-gradient-to-br from-primary/10 to-background">
         <div className="container mx-auto px-4">

@@ -13,6 +13,7 @@ import { useCartStore } from "@/stores/cartStore";
 import { getProductBySlug, products, type Product } from "@/data/products";
 import { useVariantMap } from "@/hooks/useVariantMap";
 import { useProductRatings } from "@/hooks/useProductRatings";
+import { SEO } from "@/components/SEO";
 
 export default function ProductPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -58,6 +59,60 @@ export default function ProductPage() {
   const relatedProducts = products
     .filter(p => p.category === product.category && p.slug !== product.slug)
     .slice(0, 4);
+
+  const ratingData = getRating(product.slug);
+
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: `${product.name}${product.colorVariant ? ` ${product.colorVariant}` : ""}`,
+    description: product.description,
+    image: product.gallery || [product.image],
+    sku: product.id,
+    brand: { "@type": "Brand", name: "IANONI" },
+    offers: {
+      "@type": "Offer",
+      url: `https://www.ianoni.co.uk/product/${product.slug}`,
+      priceCurrency: "GBP",
+      price: price.toFixed(2),
+      availability: canAddToCart
+        ? "https://schema.org/InStock"
+        : "https://schema.org/OutOfStock",
+      seller: { "@type": "Organization", name: "IANONI" },
+    },
+    ...(ratingData && {
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: ratingData.avgRating,
+        reviewCount: ratingData.displayCount,
+        bestRating: 5,
+        worstRating: 1,
+      },
+    }),
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.ianoni.co.uk/" },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: isStarterKit ? "Starter Kits & Accessories" : "Padel Rackets",
+        item: `https://www.ianoni.co.uk/${categoryPath}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: `${product.name}${product.colorVariant ? ` ${product.colorVariant}` : ""}`,
+        item: `https://www.ianoni.co.uk/product/${product.slug}`,
+      },
+    ],
+  };
+
+  const seoTitle = `${product.name}${product.colorVariant ? ` ${product.colorVariant}` : ""} | IANONI Padel Racket – £${price.toFixed(2)}`;
+  const seoDescription = product.description.slice(0, 155) + (product.description.length > 155 ? "…" : "");
 
   const handleAddToCart = async () => {
     if (!canAddToCart || !resolved) return;
@@ -113,6 +168,13 @@ export default function ProductPage() {
 
   return (
     <Layout>
+      <SEO
+        title={seoTitle}
+        description={seoDescription}
+        ogImage={product.image}
+        ogType="product"
+        schema={[productSchema, breadcrumbSchema]}
+      />
       <div className="pt-24">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
@@ -145,7 +207,7 @@ export default function ProductPage() {
                   transition={{ duration: 0.3 }}
                   whileHover={{ scale: 1.05 }}
                   src={galleryImages[selectedImage]}
-                  alt={product.name}
+                  alt={`IANONI ${product.name}${product.colorVariant ? ` ${product.colorVariant}` : ""} padel racket – view ${selectedImage + 1}`}
                   className="w-full h-full object-contain"
                 />
                 <div className="absolute bottom-4 right-4 p-2 rounded-full bg-foreground/10 backdrop-blur-sm text-foreground/60">
@@ -163,7 +225,7 @@ export default function ProductPage() {
                         selectedImage === i ? "ring-2 ring-primary" : "hover:ring-2 ring-primary/50"
                       }`}
                     >
-                      <img src={img} alt={`${product.name} view ${i + 1}`} className="w-full h-full object-contain" />
+                      <img src={img} alt={`IANONI ${product.name}${product.colorVariant ? ` ${product.colorVariant}` : ""} – image ${i + 1}`} className="w-full h-full object-contain" />
                     </button>
                   ))}
                 </div>

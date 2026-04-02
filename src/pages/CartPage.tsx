@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ShoppingBag, ArrowRight, Minus, Plus, Trash2, Package, Dumbbell, Loader2, ExternalLink } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/SEO";
 import { Separator } from "@/components/ui/separator";
 import { useCartStore } from "@/stores/cartStore";
 
@@ -62,6 +63,7 @@ export default function CartPage() {
 
   return (
     <Layout>
+      <SEO title="Your Cart – IANONI" description="Review your cart." noindex={true} />
       <div className="pt-24 min-h-screen">
         <div className="container mx-auto px-4 py-12">
           <div className="flex items-center justify-between mb-8">

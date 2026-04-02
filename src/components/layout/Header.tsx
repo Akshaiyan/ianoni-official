@@ -12,6 +12,7 @@ const navLinks = [
   { name: "Shop Padel", href: "/padel" },
   { name: "Starter Kits & Accessories", href: "/accessories" },
   { name: "Guide", href: "/guide" },
+  { name: "Blog", href: "/blog" },
 ];
 
 export function Header() {

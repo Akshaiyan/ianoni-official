@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { BookOpen, Lightbulb, HelpCircle, ChevronRight, ArrowRight, Check, Mail } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import {
   Accordion,
@@ -66,6 +67,10 @@ export default function GuidePage() {
 
   return (
     <Layout>
+      <SEO
+        title="Padel Beginner's Guide | How to Choose a Padel Racket – IANONI"
+        description="New to padel? Our beginner's guide covers how to choose the right racket, court rules, and tips to improve fast. Start your padel journey with IANONI."
+      />
       {/* Hero */}
       <section className="pt-28 pb-16 bg-gradient-to-br from-primary/5 to-background">
         <div className="container mx-auto px-4">
