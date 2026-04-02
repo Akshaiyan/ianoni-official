@@ -1,8 +1,10 @@
-import { useParams, Link, Navigate } from "react-router-dom";
+"use client";
+import Link from "next/link";
+import { useParams } from "next/navigation";
+import { notFound } from "next/navigation";
 import { motion } from "framer-motion";
 import { ChevronRight, Clock, Tag, ArrowLeft } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
-import { SEO } from "@/components/SEO";
 import { getBlogPostBySlug, blogPosts, type BlogBlock } from "@/data/blog";
 
 function renderBlock(block: BlogBlock, i: number) {
@@ -70,10 +72,11 @@ function renderBlock(block: BlogBlock, i: number) {
 }
 
 export default function BlogPostPage() {
-  const { slug } = useParams<{ slug: string }>();
+  const params = useParams();
+  const slug = params?.slug as string | undefined;
   const post = slug ? getBlogPostBySlug(slug) : undefined;
 
-  if (!post) return <Navigate to="/blog" replace />;
+  if (!post) { notFound(); return null; }
 
   const related = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 3);
 
@@ -106,20 +109,13 @@ export default function BlogPostPage() {
 
   return (
     <Layout>
-      <SEO
-        title={`${post.title} – IANONI`}
-        description={post.metaDescription}
-        ogType="article"
-        schema={[articleSchema, breadcrumbSchema]}
-      />
-
       <article className="pt-28 pb-20">
         <div className="container mx-auto px-4 max-w-3xl">
           {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-8">
-            <Link to="/" className="hover:text-primary">Home</Link>
+            <Link href="/" className="hover:text-primary">Home</Link>
             <ChevronRight className="h-4 w-4" />
-            <Link to="/blog" className="hover:text-primary">Blog</Link>
+            <Link href="/blog" className="hover:text-primary">Blog</Link>
             <ChevronRight className="h-4 w-4" />
             <span className="text-foreground font-medium truncate max-w-[200px]">{post.title}</span>
           </nav>
@@ -169,13 +165,13 @@ export default function BlogPostPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link
-                to="/padel"
+                href="/padel"
                 className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors"
               >
                 Shop Padel Rackets
               </Link>
               <Link
-                to="/accessories"
+                href="/accessories"
                 className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-border font-medium hover:bg-muted transition-colors"
               >
                 View Starter Kits
@@ -185,7 +181,7 @@ export default function BlogPostPage() {
 
           {/* Back link */}
           <Link
-            to="/blog"
+            href="/blog"
             className="inline-flex items-center gap-2 mt-12 text-sm text-muted-foreground hover:text-primary transition-colors"
           >
             <ArrowLeft className="h-4 w-4" />

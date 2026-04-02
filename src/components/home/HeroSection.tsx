@@ -1,5 +1,6 @@
+"use client";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
 import heroImage from "@/assets/hero-action.jpg";
@@ -136,7 +137,7 @@ export function HeroSection() {
         duration: 0.8,
         delay: 1
       }} className="flex justify-center mb-10">
-          <Link to="/padel" className="group flex items-center justify-center gap-3 px-10 py-5 bg-primary hover:bg-primary/90 text-white rounded-full transition-all duration-300">
+          <Link href="/padel" className="group flex items-center justify-center gap-3 px-10 py-5 bg-primary hover:bg-primary/90 text-white rounded-full transition-all duration-300">
             <span className="text-base font-semibold">Shop Padel Rackets</span>
             <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>

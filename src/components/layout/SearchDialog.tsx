@@ -1,5 +1,6 @@
+"use client";
 import { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Search, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { products } from "@/data/products";
@@ -97,7 +98,7 @@ export function SearchDialog({ isOpen, onClose, isDark = true }: SearchDialogPro
                     {filteredProducts.map((product, index) => (
                       <Link
                         key={product.id}
-                        to={`/product/${product.slug}`}
+                        href={`/product/${product.slug}`}
                         onClick={handleProductClick}
                         className={cn(
                           "flex items-center gap-4 p-4 hover:bg-muted transition-colors",

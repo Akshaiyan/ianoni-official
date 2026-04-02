@@ -1,18 +1,10 @@
-import { Link } from "react-router-dom";
+"use client";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { ChevronRight, Clock, Tag } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
-import { SEO } from "@/components/SEO";
 import { blogPosts } from "@/data/blog";
 
-const blogSchema = {
-  "@context": "https://schema.org",
-  "@type": "Blog",
-  name: "IANONI Padel Blog",
-  description: "Padel guides, buying advice, and tips from IANONI.",
-  url: "https://www.ianoni.co.uk/blog",
-  publisher: { "@type": "Organization", name: "IANONI", url: "https://www.ianoni.co.uk" },
-};
 
 export default function BlogPage() {
   const featured = blogPosts[0];
@@ -20,16 +12,10 @@ export default function BlogPage() {
 
   return (
     <Layout>
-      <SEO
-        title="Padel Blog | Guides, Tips & Buying Advice – IANONI"
-        description="Expert padel guides, racket buying advice, and tips to help you improve your game. Written by the IANONI team."
-        schema={blogSchema}
-      />
-
       <section className="pt-28 pb-16 bg-gradient-to-br from-primary/5 to-background">
         <div className="container mx-auto px-4">
           <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-8">
-            <Link to="/" className="hover:text-primary">Home</Link>
+            <Link href="/" className="hover:text-primary">Home</Link>
             <ChevronRight className="h-4 w-4" />
             <span className="text-foreground font-medium">Blog</span>
           </nav>

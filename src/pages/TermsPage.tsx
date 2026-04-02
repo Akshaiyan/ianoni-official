@@ -1,18 +1,14 @@
+"use client";
 import { Layout } from "@/components/layout/Layout";
-import { SEO } from "@/components/SEO";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 export default function TermsPage() {
   return (
     <Layout>
-      <SEO
-        title="Terms & Conditions – IANONI"
-        description="Read the IANONI terms and conditions for purchases, returns, and use of our website."
-      />
       <section className="pt-28 pb-16">
         <div className="container mx-auto px-4 max-w-3xl">
           <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-8">
-            <Link to="/" className="hover:text-primary">Home</Link>
+            <Link href="/" className="hover:text-primary">Home</Link>
             <span>/</span>
             <span className="text-foreground font-medium">Terms & Conditions</span>
           </nav>

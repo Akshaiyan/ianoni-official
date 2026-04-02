@@ -1,3 +1,4 @@
+"use client";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import pr8100Detail from "@/assets/products/pr8100-detail.jpg";

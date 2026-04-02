@@ -1,6 +1,7 @@
+"use client";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { SEO } from "@/components/SEO";
@@ -74,7 +75,7 @@ export default function FAQPage() {
       <section className="pt-28 pb-16 bg-gradient-to-br from-primary/10 to-background">
         <div className="container mx-auto px-4">
           <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-8">
-            <Link to="/" className="hover:text-primary">Home</Link>
+            <Link href="/" className="hover:text-primary">Home</Link>
             <ChevronRight className="h-4 w-4" />
             <span className="text-foreground font-medium">FAQ</span>
           </nav>
@@ -175,7 +176,7 @@ export default function FAQPage() {
               size="lg"
               className="bg-primary-foreground text-primary hover:bg-primary-foreground/90"
             >
-              <Link to="/padel">
+              <Link href="/padel">
                 Shop Rackets
               </Link>
             </Button>

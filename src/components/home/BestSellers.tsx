@@ -1,5 +1,6 @@
+"use client";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ArrowRight, ChevronLeft, ChevronRight, ShoppingBag } from "lucide-react";
 import { useState, useMemo } from "react";
 import { Button } from "@/components/ui/button";
@@ -192,7 +193,7 @@ export function BestSellers() {
             size="lg"
             className="h-14 px-10 text-base font-semibold rounded-full shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-shadow"
           >
-            <Link to="/padel" className="flex items-center gap-3">
+            <Link href="/padel" className="flex items-center gap-3">
               View All Rackets
               <ArrowRight className="h-5 w-5" />
             </Link>

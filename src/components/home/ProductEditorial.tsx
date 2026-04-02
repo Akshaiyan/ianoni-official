@@ -1,5 +1,6 @@
+"use client";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
 import pr8100NoBg from "@/assets/products/pr8100-nobg.png";
@@ -127,7 +128,7 @@ export function ProductEditorial() {
               </div>
 
               <Link
-                to="/product/pr8100-red-black"
+                href="/product/pr8100-red-black"
                 className="group inline-flex items-center gap-5"
               >
                 <div className="w-14 h-14 rounded-full border border-white/10 group-hover:border-primary group-hover:bg-primary/10 flex items-center justify-center transition-all duration-500">

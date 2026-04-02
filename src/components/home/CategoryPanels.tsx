@@ -1,5 +1,6 @@
+"use client";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { useRef, useMemo } from "react";
 import { getPadelRackets } from "@/data/products";
@@ -160,7 +161,7 @@ export function CategoryPanels() {
           {/* Explore All Button - Bigger */}
           <div className="flex justify-center mt-8">
             <Link
-              to="/padel"
+              href="/padel"
               onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "instant" })}
               className="group inline-flex items-center gap-4 px-10 py-4 bg-primary hover:bg-primary/90 text-primary-foreground rounded-full font-semibold text-base transition-all duration-300 shadow-lg shadow-primary/25 hover:shadow-primary/40"
             >

@@ -1,6 +1,7 @@
+"use client";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { BookOpen, Lightbulb, HelpCircle, ChevronRight, ArrowRight, Check, Mail } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { SEO } from "@/components/SEO";
@@ -105,7 +106,7 @@ export default function GuidePage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Link to={guide.href} className="group block h-full">
+                <Link href={guide.href} className="group block h-full">
                   <div className="h-full bg-card rounded-2xl p-8 border hover:border-primary hover:shadow-lg transition-all">
                     <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
                       <guide.icon className="h-7 w-7 text-primary group-hover:text-primary-foreground transition-colors" />
@@ -185,7 +186,7 @@ export default function GuidePage() {
 
           <div className="text-center mt-8">
             <Button asChild size="lg">
-              <Link to="/padel">
+              <Link href="/padel">
                 Shop Beginner Rackets
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
@@ -253,7 +254,7 @@ export default function GuidePage() {
                 size="lg"
                 className="bg-primary-foreground text-primary hover:bg-primary-foreground/90"
               >
-                <Link to="/padel">
+                <Link href="/padel">
                   Shop Now
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
@@ -263,7 +264,7 @@ export default function GuidePage() {
                 size="lg"
                 className="border-primary-foreground border-2 bg-transparent text-primary-foreground hover:bg-primary-foreground hover:text-primary"
               >
-                <Link to="/contact">
+                <Link href="/contact">
                   <Mail className="mr-2 h-5 w-5" />
                   Contact Us
                 </Link>

@@ -1,18 +1,14 @@
+"use client";
 import { Layout } from "@/components/layout/Layout";
-import { SEO } from "@/components/SEO";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 export default function AboutPage() {
   return (
     <Layout>
-      <SEO
-        title="About IANONI | Our Story & Mission"
-        description="IANONI was built to make premium padel accessible to everyone. Learn about our mission to bring high-performance carbon fibre rackets to players at every level."
-      />
       <section className="pt-28 pb-16">
         <div className="container mx-auto px-4 max-w-3xl">
           <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-8">
-            <Link to="/" className="hover:text-primary">Home</Link>
+            <Link href="/" className="hover:text-primary">Home</Link>
             <span>/</span>
             <span className="text-foreground font-medium">About</span>
           </nav>
@@ -41,13 +37,13 @@ export default function AboutPage() {
 
           <div className="mt-10 flex gap-4">
             <Link
-              to="/padel"
+              href="/padel"
               className="inline-flex items-center px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors"
             >
               Shop Rackets
             </Link>
             <Link
-              to="/contact"
+              href="/contact"
               className="inline-flex items-center px-6 py-3 rounded-full border border-border font-medium hover:bg-muted transition-colors"
             >
               Get in Touch

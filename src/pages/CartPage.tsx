@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+"use client";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ShoppingBag, ArrowRight, Minus, Plus, Trash2, Package, Dumbbell, Loader2, ExternalLink } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
@@ -42,13 +43,13 @@ export default function CartPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild size="lg">
-                  <Link to="/padel">
+                  <Link href="/padel">
                     <Dumbbell className="mr-2 h-5 w-5" />
                     Shop Padel Rackets
                   </Link>
                 </Button>
                 <Button asChild size="lg" variant="outline">
-                  <Link to="/accessories">
+                  <Link href="/accessories">
                     <Package className="mr-2 h-5 w-5" />
                     Shop Starter Kits & Accessories
                   </Link>
@@ -89,7 +90,7 @@ export default function CartPage() {
                       exit={{ opacity: 0, x: -100 }}
                       className="flex gap-4 md:gap-6 py-6 border-b border-border"
                     >
-                      <Link to={`/product/${item.display.handle}`} className="shrink-0">
+                      <Link href={`/product/${item.display.handle}`} className="shrink-0">
                         <div className="w-24 h-24 md:w-32 md:h-32 rounded-xl bg-muted flex items-center justify-center p-2 overflow-hidden">
                           {item.display.imageUrl && (
                             <img
@@ -102,7 +103,7 @@ export default function CartPage() {
                       </Link>
 
                       <div className="flex-1 min-w-0">
-                        <Link to={`/product/${item.display.handle}`} className="hover:text-primary transition-colors">
+                        <Link href={`/product/${item.display.handle}`} className="hover:text-primary transition-colors">
                           <h3 className="font-semibold text-base md:text-lg truncate">{item.display.title}</h3>
                         </Link>
                         {item.variantTitle !== 'Default Title' && (
@@ -184,7 +185,7 @@ export default function CartPage() {
                   Checkout
                 </Button>
                 <Button variant="ghost" className="w-full mt-2" asChild>
-                  <Link to="/padel">Continue Shopping</Link>
+                  <Link href="/padel">Continue Shopping</Link>
                 </Button>
               </div>
             </div>

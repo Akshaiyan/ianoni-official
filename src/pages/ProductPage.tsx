@@ -1,4 +1,6 @@
-import { useParams, Link } from "react-router-dom";
+"use client";
+import Link from "next/link";
+import { useParams } from "next/navigation";
 import { useLayoutEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronRight, Check, ShoppingBag, Share2, Truck, Shield, RotateCcw, ZoomIn, Package, Loader2, Star } from "lucide-react";
@@ -38,7 +40,7 @@ export default function ProductPage() {
           <div className="text-center">
             <h1 className="text-2xl font-bold mb-4">Product Not Found</h1>
             <Button asChild>
-              <Link to="/">Go Home</Link>
+              <Link href="/">Go Home</Link>
             </Button>
           </div>
         </div>
@@ -179,9 +181,9 @@ export default function ProductPage() {
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-8">
-            <Link to="/" className="hover:text-primary">Home</Link>
+            <Link href="/" className="hover:text-primary">Home</Link>
             <ChevronRight className="h-4 w-4" />
-            <Link to={`/${categoryPath}`} className="hover:text-primary capitalize">
+            <Link href={`/${categoryPath}`} className="hover:text-primary capitalize">
               {isStarterKit ? 'Starter Kits & Accessories' : 'Padel Rackets'}
             </Link>
             <ChevronRight className="h-4 w-4" />

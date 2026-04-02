@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+"use client";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { ShoppingBag, Star } from "lucide-react";
 import type { Product } from "@/data/products";
@@ -50,7 +51,7 @@ export function ProductCard({ product, index = 0, variant = "light" }: ProductCa
       transition={{ delay: index * 0.1, duration: 0.6 }}
     >
       <Link
-        to={`/product/${product.slug}`}
+        href={`/product/${product.slug}`}
         className="group block"
       >
         <div className="relative">
