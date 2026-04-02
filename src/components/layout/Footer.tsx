@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import ianoniLogo from "@/assets/ianoni-logo.png";
 
 export function Footer() {
@@ -9,7 +10,7 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="inline-block">
-              <img src={ianoniLogo} alt="IANONI" className="h-10 w-auto" />
+              <Image src={ianoniLogo} alt="IANONI padel rackets logo" height={40} className="w-auto" />
             </Link>
             <p className="text-muted-foreground text-sm mt-4 max-w-xs">Premium padel equipment engineered for players at every level.</p>
           </div>

@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { SearchDialog } from "./SearchDialog";
 import { useCartStore } from "@/stores/cartStore";
+import Image from "next/image";
 import ianoniLogo from "@/assets/ianoni-logo.png";
 
 const navLinks = [
@@ -54,11 +55,12 @@ export function Header() {
               className="relative z-10"
               onClick={() => window.scrollTo(0, 0)}
             >
-              <img
+              <Image
                 src={ianoniLogo}
-                alt="IANONI"
+                alt="IANONI padel rackets"
+                height={48}
                 className={cn(
-                  "h-12 w-auto transition-all duration-300",
+                  "w-auto transition-all duration-300",
                   !showDarkHeader && "brightness-0 invert"
                 )}
               />

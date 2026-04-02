@@ -2,9 +2,10 @@
 import { useState, useCallback, useRef, useEffect } from "react";
 import { motion, AnimatePresence, useMotionValue, useTransform } from "framer-motion";
 import { X, ChevronLeft, ChevronRight, ZoomIn, ZoomOut, Maximize2 } from "lucide-react";
+import type { StaticImageData } from "next/image";
 
 interface ImageLightboxProps {
-  images: string[];
+  images: StaticImageData[];
   initialIndex: number;
   productName: string;
   open: boolean;
@@ -318,7 +319,7 @@ export function ImageLightbox({ images, initialIndex, productName, open, onClose
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.2 }}
-                src={images[currentIndex]}
+                src={images[currentIndex].src}
                 alt={`${productName} view ${currentIndex + 1}`}
                 className="max-w-[90vw] max-h-[75vh] object-contain"
                 style={{

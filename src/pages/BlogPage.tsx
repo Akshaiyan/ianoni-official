@@ -37,7 +37,7 @@ export default function BlogPage() {
             className="mb-16"
           >
             <Link
-              to={`/blog/${featured.slug}`}
+              href={`/blog/${featured.slug}`}
               className="group grid md:grid-cols-2 gap-8 bg-card border border-border rounded-3xl overflow-hidden hover:border-primary/40 transition-colors"
             >
               <div className="aspect-[16/9] md:aspect-auto bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center min-h-[240px]">
@@ -74,7 +74,7 @@ export default function BlogPage() {
                 transition={{ delay: i * 0.08 }}
               >
                 <Link
-                  to={`/blog/${post.slug}`}
+                  href={`/blog/${post.slug}`}
                   className="group flex flex-col h-full bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/40 transition-colors"
                 >
                   <div className="aspect-[16/9] bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center">

@@ -69,7 +69,7 @@ export function BeginnerHub() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
                   <Link
-                    to={guide.href}
+                    href={guide.href}
                     className="group flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-primary/30 transition-all"
                   >
                     <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center flex-shrink-0">

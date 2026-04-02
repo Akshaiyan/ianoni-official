@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useParams } from "next/navigation";
 import { useLayoutEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -69,7 +70,7 @@ export default function ProductPage() {
     "@type": "Product",
     name: `${product.name}${product.colorVariant ? ` ${product.colorVariant}` : ""}`,
     description: product.description,
-    image: product.gallery || [product.image],
+    image: (product.gallery || [product.image]).map(img => img.src),
     sku: product.id,
     brand: { "@type": "Brand", name: "IANONI" },
     offers: {
@@ -119,7 +120,7 @@ export default function ProductPage() {
   const handleAddToCart = async () => {
     if (!canAddToCart || !resolved) return;
     await addItem({
-      display: { title: product.name + (product.colorVariant ? ` ${product.colorVariant}` : ''), handle: product.slug, imageUrl: product.image },
+      display: { title: product.name + (product.colorVariant ? ` ${product.colorVariant}` : ''), handle: product.slug, imageUrl: product.image.src},
       variantId: resolved.variantId,
       variantTitle: product.colorVariant || "Default Title",
       price: resolved.price || { amount: product.price.toFixed(2), currencyCode: "GBP" },
@@ -135,7 +136,7 @@ export default function ProductPage() {
   const handleExpressCheckout = async () => {
     if (!canAddToCart || !resolved) return;
     await addItem({
-      display: { title: product.name + (product.colorVariant ? ` ${product.colorVariant}` : ''), handle: product.slug, imageUrl: product.image },
+      display: { title: product.name + (product.colorVariant ? ` ${product.colorVariant}` : ''), handle: product.slug, imageUrl: product.image.src},
       variantId: resolved.variantId,
       variantTitle: product.colorVariant || "Default Title",
       price: resolved.price || { amount: product.price.toFixed(2), currencyCode: "GBP" },
@@ -173,7 +174,7 @@ export default function ProductPage() {
       <SEO
         title={seoTitle}
         description={seoDescription}
-        ogImage={product.image}
+        ogImage={product.image.src}
         ogType="product"
         schema={[productSchema, breadcrumbSchema]}
       />
@@ -208,7 +209,7 @@ export default function ProductPage() {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.3 }}
                   whileHover={{ scale: 1.05 }}
-                  src={galleryImages[selectedImage]}
+                  src={galleryImages[selectedImage].src}
                   alt={`IANONI ${product.name}${product.colorVariant ? ` ${product.colorVariant}` : ""} padel racket – view ${selectedImage + 1}`}
                   className="w-full h-full object-contain"
                 />
@@ -227,7 +228,7 @@ export default function ProductPage() {
                         selectedImage === i ? "ring-2 ring-primary" : "hover:ring-2 ring-primary/50"
                       }`}
                     >
-                      <img src={img} alt={`IANONI ${product.name}${product.colorVariant ? ` ${product.colorVariant}` : ""} – image ${i + 1}`} className="w-full h-full object-contain" />
+                      <Image src={img} alt={`IANONI ${product.name}${product.colorVariant ? ` ${product.colorVariant}` : ""} – image ${i + 1}`} width={80} height={80} className="w-full h-full object-contain" />
                     </button>
                   ))}
                 </div>

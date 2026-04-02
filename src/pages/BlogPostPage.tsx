@@ -199,7 +199,7 @@ export default function BlogPostPage() {
               {related.map((p) => (
                 <Link
                   key={p.slug}
-                  to={`/blog/${p.slug}`}
+                  href={`/blog/${p.slug}`}
                   className="group bg-card border border-border rounded-2xl p-6 hover:border-primary/40 transition-colors"
                 >
                   <div className="flex items-center gap-2 text-xs text-muted-foreground mb-3">

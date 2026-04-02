@@ -1,5 +1,6 @@
+"use client";
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { usePathname } from "next/navigation";
 
 const SITE_URL = "https://www.ianoni.co.uk";
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.jpg`;
@@ -21,7 +22,7 @@ export function SEO({
   noindex = false,
   schema,
 }: SEOProps) {
-  const { pathname } = useLocation();
+  const pathname = usePathname();
   const canonical = `${SITE_URL}${pathname}`;
 
   useEffect(() => {

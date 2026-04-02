@@ -20,7 +20,7 @@ export async function generateMetadata({
     title,
     description,
     alternates: { canonical: `https://www.ianoni.co.uk/product/${slug}` },
-    openGraph: { title, description, images: [product.image], type: "website" },
+    openGraph: { title, description, images: [product.image.src], type: "website" },
   };
 }
 

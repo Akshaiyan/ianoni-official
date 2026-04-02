@@ -1,6 +1,7 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
 import heroImage from "@/assets/hero-action.jpg";
@@ -22,7 +23,7 @@ export function HeroSection() {
         scale: imageScale,
         opacity: imageOpacity
       }} className="absolute inset-0">
-          <img src={heroImage} alt="Padel in action" className="absolute inset-0 w-full h-full object-cover" />
+          <Image src={heroImage} alt="Padel player in action with IANONI racket" fill className="object-cover" priority sizes="100vw" />
         </motion.div>
 
         {/* Cinematic overlays - lighter for better visibility */}

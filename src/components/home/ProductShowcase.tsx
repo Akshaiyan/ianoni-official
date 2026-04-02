@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import pr8100RedBlack from "@/assets/products/pr8100-red-black.jpg";
@@ -127,17 +128,23 @@ function ProductShowcaseCard({ product, index }: ProductShowcaseCardProps) {
           className="relative h-[600px] md:h-[700px] rounded-3xl overflow-hidden bg-gradient-to-b from-white/10 to-white/5 border border-white/10"
         >
           {/* Product image - large and prominent */}
-          <div className="absolute inset-0 flex items-center justify-center p-8">
-            <motion.img
-              src={product.image}
-              alt={product.name}
-              className="w-full h-full object-contain drop-shadow-2xl transition-transform duration-700 group-hover:scale-110"
-              initial={{ scale: 0.9, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-            />
-          </div>
+          <motion.div
+            className="absolute inset-0 flex items-center justify-center p-8"
+            initial={{ scale: 0.9, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: index * 0.1 }}
+          >
+            <div className="relative w-full h-full">
+              <Image
+                src={product.image}
+                alt={product.name}
+                fill
+                className="object-contain drop-shadow-2xl transition-transform duration-700 group-hover:scale-110"
+                sizes="(max-width: 768px) 90vw, 500px"
+              />
+            </div>
+          </motion.div>
 
           {/* Gradient overlay at bottom */}
           <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />

@@ -3,6 +3,11 @@ export interface BlogBlock {
   content: string | string[];
 }
 
+export interface BlogPostLink {
+  text: string;
+  href: string;
+}
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -13,6 +18,7 @@ export interface BlogPost {
   category: string;
   coverImage: string;
   body: BlogBlock[];
+  featuredProducts?: BlogPostLink[];
 }
 
 export const blogPosts: BlogPost[] = [
@@ -30,6 +36,11 @@ export const blogPosts: BlogPost[] = [
     readTime: "6 min read",
     category: "Buying Guides",
     coverImage: "/blog/beginners-guide-cover.jpg",
+    featuredProducts: [
+      { text: "IANONI PR8100 Red/Black – £39.99", href: "/product/pr8100-red-black" },
+      { text: "IANONI PR8100 Blue/Pink – £39.99", href: "/product/pr8100-blue-pink" },
+      { text: "PR8100 Starter Kit (racket + balls + bag) – £44.99", href: "/product/starter-kit-red-black" },
+    ],
     body: [
       {
         type: "p",
@@ -149,6 +160,11 @@ export const blogPosts: BlogPost[] = [
     readTime: "8 min read",
     category: "Buying Guides",
     coverImage: "/blog/buying-guide-cover.jpg",
+    featuredProducts: [
+      { text: "IANONI PR8100 – Best for beginners to intermediate (£39.99)", href: "/product/pr8100-red-black" },
+      { text: "IANONI PR8200 – Built for intermediate players (£39.99)", href: "/product/pr8200-blue-stripe" },
+      { text: "Super Power – Step up racket (£49.99)", href: "/product/super-power-pink" },
+    ],
     body: [
       {
         type: "p",
@@ -302,6 +318,10 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     category: "Equipment",
     coverImage: "/blog/carbon-fibre-cover.jpg",
+    featuredProducts: [
+      { text: "IANONI PR8100 – 3-layer carbon fibre (£39.99)", href: "/product/pr8100-red-black" },
+      { text: "IANONI PR8200 – Carbon fibre with optimised hole pattern (£39.99)", href: "/product/pr8200-grey-stripe" },
+    ],
     body: [
       {
         type: "p",

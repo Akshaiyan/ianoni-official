@@ -1,6 +1,7 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { useRef, useMemo } from "react";
 import { getPadelRackets } from "@/data/products";
@@ -130,17 +131,17 @@ export function CategoryPanels() {
                 transition={{ duration: 0.5, delay: index * 0.05 }}
               >
                 <Link
-                  to={`/product/${racket.slug}`}
+                  href={`/product/${racket.slug}`}
                   className="group block relative aspect-square overflow-hidden rounded-xl bg-gradient-to-b from-muted/50 to-muted"
                 >
                   {/* Image - contained to show full racket */}
-                  <div className="absolute inset-2 flex items-center justify-center">
-                    <img
-                      src={racket.image}
-                      alt={`${racket.name} ${racket.colorVariant}`}
-                      className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
-                    />
-                  </div>
+                  <Image
+                    src={racket.image}
+                    alt={`${racket.name} ${racket.colorVariant}`}
+                    fill
+                    className="object-contain p-2 transition-transform duration-500 group-hover:scale-110"
+                    sizes="(max-width: 768px) 45vw, 20vw"
+                  />
                   
                   {/* Hover overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -182,17 +183,17 @@ export function CategoryPanels() {
               transition={{ duration: 0.7, delay: 0.1 + index * 0.1 }}
             >
               <Link
-                to={category.href}
+                href={category.href}
                 className="group block relative h-[200px] overflow-hidden rounded-xl"
               >
                 {/* Image */}
-                <div className="absolute inset-0 overflow-hidden">
-                  <img
-                    src={category.image}
-                    alt={category.title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                </div>
+                <Image
+                  src={category.image}
+                  alt={category.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  sizes="(max-width: 768px) 90vw, 45vw"
+                />
 
                 {/* Overlays */}
                 <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/30" />

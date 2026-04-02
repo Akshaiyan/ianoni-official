@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/Providers";
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -25,12 +32,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-GB">
+    <html lang="en-GB" className={inter.variable}>
       <head>
         <link rel="icon" href="/favicon.png" type="image/png" />
         <link rel="preconnect" href="https://siplfligkdeidcousphr.supabase.co" />
+        {/* Replace content value with your Google Search Console verification code */}
+        {/* <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" /> */}
       </head>
-      <body>
+      <body className={inter.className}>
         <Providers>{children}</Providers>
       </body>
     </html>

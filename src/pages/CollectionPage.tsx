@@ -7,7 +7,6 @@ import { ChevronRight, Loader2 } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { ProductCard } from "@/components/ui/ProductCard";
 import { products, getPadelRackets, type Product } from "@/data/products";
-import { SEO } from "@/components/SEO";
 
 const categoryInfo: Record<string, { title: string; description: string; emoji: string; filter: (p: Product) => boolean; seoTitle: string; seoDescription: string }> = {
   padel: {
@@ -78,11 +77,37 @@ export default function CollectionPage() {
     );
   }
 
+  const BASE = "https://www.ianoni.co.uk";
+  const pageUrl = `${BASE}/${category}`;
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${BASE}/` },
+      { "@type": "ListItem", position: 2, name: info.title, item: pageUrl },
+    ],
+  };
+
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: info.title,
+    url: pageUrl,
+    numberOfItems: displayProducts.length,
+    itemListElement: displayProducts.map((p, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      url: `${BASE}/product/${p.slug}`,
+      name: `IANONI ${p.name}${p.colorVariant ? ` ${p.colorVariant}` : ""}`,
+    })),
+  };
+
   return (
     <Layout>
-      <SEO
-        title={info.seoTitle}
-        description={info.seoDescription}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, itemListSchema]) }}
       />
       <section className="pt-28 pb-12 bg-gradient-to-br from-surface to-background">
         <div className="container mx-auto px-4">

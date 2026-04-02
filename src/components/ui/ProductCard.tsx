@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ShoppingBag, Star } from "lucide-react";
 import type { Product } from "@/data/products";
@@ -32,7 +33,7 @@ export function ProductCard({ product, index = 0, variant = "light" }: ProductCa
       display: {
         title: product.name + (product.colorVariant ? ` ${product.colorVariant}` : ''),
         handle: product.slug,
-        imageUrl: product.image,
+        imageUrl: product.image.src,
       },
       variantId: resolved.variantId,
       variantTitle: product.colorVariant || "Default Title",
@@ -67,10 +68,12 @@ export function ProductCard({ product, index = 0, variant = "light" }: ProductCa
             </div>
             
             <div className="absolute inset-0 flex items-center justify-center p-3">
-              <img
+              <Image
                 src={product.image}
                 alt={`IANONI ${product.name}${product.colorVariant ? ` ${product.colorVariant}` : ""} padel racket`}
-                className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 drop-shadow-xl"
+                fill
+                className="object-contain transition-transform duration-700 group-hover:scale-110 drop-shadow-xl"
+                sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 30vw"
               />
             </div>
             

@@ -118,6 +118,8 @@ import starterKitBs from "@/assets/products/starter-kit-bs.jpg";
 import starterKitRb from "@/assets/products/starter-kit-rb.jpg";
 import starterKitRbDoubles from "@/assets/products/starter-kit-rb-doubles.jpg";
 
+import type { StaticImageData } from "next/image";
+
 export interface Product {
   id: string;
   name: string;
@@ -127,8 +129,8 @@ export interface Product {
   originalPrice?: number;
   rating: number;
   reviewCount: number;
-  image: string;
-  gallery?: string[];
+  image: StaticImageData;
+  gallery?: StaticImageData[];
   badge?: string;
   description: string;
   longDescription?: string;

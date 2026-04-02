@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, ChevronLeft, ChevronRight, ShoppingBag } from "lucide-react";
 import { useState, useMemo } from "react";
 import { Button } from "@/components/ui/button";
@@ -26,7 +27,7 @@ export function BestSellers() {
       display: {
         title: product.name + (product.colorVariant ? ` ${product.colorVariant}` : ''),
         handle: product.slug,
-        imageUrl: product.image,
+        imageUrl: product.image.src,
       },
       variantId: resolved.variantId,
       variantTitle: product.colorVariant || "Default Title",
@@ -120,17 +121,17 @@ export function BestSellers() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <Link
-                to={`/product/${product.slug}`}
+                href={`/product/${product.slug}`}
                 className="group block relative overflow-hidden"
               >
-                <div className="relative overflow-hidden rounded-2xl h-[400px] md:h-[450px]">
-                  <div className="absolute inset-0 overflow-hidden bg-muted">
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                  </div>
+                <div className="relative overflow-hidden rounded-2xl h-[400px] md:h-[450px] bg-muted">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    sizes="(max-width: 768px) 90vw, 30vw"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
 
                   <div className="absolute bottom-0 left-0 right-0 p-6">

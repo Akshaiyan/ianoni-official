@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Search, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { products } from "@/data/products";
@@ -105,11 +106,12 @@ export function SearchDialog({ isOpen, onClose, isDark = true }: SearchDialogPro
                           index !== filteredProducts.length - 1 && "border-b border-border"
                         )}
                       >
-                        <div className="w-14 h-14 rounded-lg bg-muted flex items-center justify-center overflow-hidden shrink-0">
-                          <img
+                        <div className="relative w-14 h-14 rounded-lg bg-muted overflow-hidden shrink-0">
+                          <Image
                             src={product.image}
                             alt={product.name}
-                            className="w-full h-full object-contain p-1"
+                            fill
+                            className="object-contain p-1"
                           />
                         </div>
                         <div className="flex-1 min-w-0">
