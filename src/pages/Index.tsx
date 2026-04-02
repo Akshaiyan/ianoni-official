@@ -1,3 +1,4 @@
+"use client";
 import { Layout } from "@/components/layout/Layout";
 import { HeroSection } from "@/components/home/HeroSection";
 import { PromoBanner } from "@/components/home/PromoBanner";

@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import pr8100RedBlack from "@/assets/products/pr8100-red-black.jpg";
@@ -84,7 +84,7 @@ export function ProductShowcase() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex-shrink-0 w-[350px] md:w-[500px] h-[600px] md:h-[700px] rounded-3xl bg-white/5 border border-white/10 flex items-center justify-center scroll-snap-center"
           >
-            <Link to="/padel" className="text-center group">
+            <Link href="/padel" className="text-center group">
               <div className="w-20 h-20 rounded-full border-2 border-white/20 group-hover:border-primary group-hover:bg-primary/10 transition-all duration-500 flex items-center justify-center mx-auto mb-6">
                 <ArrowRight className="h-8 w-8 text-white/60 group-hover:text-primary transition-colors" />
               </div>
@@ -121,7 +121,7 @@ function ProductShowcaseCard({ product, index }: ProductShowcaseCardProps) {
       style={{ scale, opacity }}
       className="flex-shrink-0 w-[350px] md:w-[500px] scroll-snap-center"
     >
-      <Link to={`/product/${product.id}`} className="block group">
+      <Link href={`/product/${product.id}`} className="block group">
         <motion.div
           style={{ rotateY }}
           className="relative h-[600px] md:h-[700px] rounded-3xl overflow-hidden bg-gradient-to-b from-white/10 to-white/5 border border-white/10"

@@ -1,5 +1,6 @@
+"use client";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ArrowRight, Clock, Truck } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -32,7 +33,7 @@ export function PromoBanner() {
         className="container mx-auto px-4"
       >
         <Link 
-          to="/padel" 
+          href="/padel" 
           className="group flex flex-wrap items-center justify-center gap-4 md:gap-8 text-white"
         >
           {/* Free Shipping */}

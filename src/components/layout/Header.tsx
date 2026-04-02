@@ -1,5 +1,7 @@
+"use client";
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ShoppingBag, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -19,8 +21,8 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const itemCount = useCartStore(state => state.itemCount)();
-  const location = useLocation();
-  const isHomePage = location.pathname === "/";
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -30,7 +32,7 @@ export function Header() {
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
-  }, [location.pathname]);
+  }, [pathname]);
 
   const showDarkHeader = isScrolled || !isHomePage;
 
@@ -47,7 +49,7 @@ export function Header() {
         <div className="container mx-auto px-4 md:px-8">
           <div className="flex items-center justify-between h-24">
             <Link 
-              to="/" 
+              href="/" 
               className="relative z-10"
               onClick={() => window.scrollTo(0, 0)}
             >
@@ -65,14 +67,14 @@ export function Header() {
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
-                  to={link.href}
+                  href={link.href}
                   className={cn(
                     "text-base font-medium tracking-wide transition-colors underline-reveal py-1",
                     showDarkHeader
-                      ? location.pathname === link.href
+                      ? pathname === link.href
                         ? "text-foreground"
                         : "text-muted-foreground hover:text-foreground"
-                      : location.pathname === link.href
+                      : pathname === link.href
                       ? "text-white"
                       : "text-white/70 hover:text-white"
                   )}
@@ -107,7 +109,7 @@ export function Header() {
                     : "text-white/70 hover:text-white hover:bg-white/10"
                 )}
               >
-                <Link to="/cart">
+                <Link href="/cart">
                   <ShoppingBag className="h-6 w-6" />
                   {itemCount > 0 && (
                     <span className="absolute -top-0.5 -right-0.5 bg-primary text-primary-foreground text-[10px] font-bold rounded-full h-5 min-w-5 flex items-center justify-center px-1">
@@ -149,10 +151,10 @@ export function Header() {
                   transition={{ delay: i * 0.1 }}
                 >
                   <Link
-                    to={link.href}
+                    href={link.href}
                     className={cn(
                       "block text-3xl font-bold",
-                      location.pathname === link.href ? "text-white" : "text-white/50"
+                      pathname === link.href ? "text-white" : "text-white/50"
                     )}
                   >
                     {link.name}

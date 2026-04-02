@@ -1,4 +1,6 @@
-import { useParams, Link } from "react-router-dom";
+"use client";
+import Link from "next/link";
+import { useParams, usePathname } from "next/navigation";
 import { useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import { ChevronRight, Loader2 } from "lucide-react";
@@ -22,10 +24,10 @@ const categoryInfo: Record<string, { title: string; description: string; emoji: 
 };
 
 export default function CollectionPage() {
-  const { category: paramCategory } = useParams<{ category: string }>();
-  
-  const pathname = window.location.pathname;
-  const category = paramCategory || (pathname === "/padel" ? "padel" : pathname === "/accessories" ? "accessories" : null);
+  const params = useParams();
+  const paramCategory = params?.category as string | undefined;
+  const pathname = usePathname();
+  const category = paramCategory ?? (pathname === "/padel" ? "padel" : pathname === "/accessories" ? "accessories" : null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -76,7 +78,7 @@ export default function CollectionPage() {
       <section className="pt-28 pb-12 bg-gradient-to-br from-surface to-background">
         <div className="container mx-auto px-4">
           <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
-            <Link to="/" className="hover:text-primary">Home</Link>
+            <Link href="/" className="hover:text-primary">Home</Link>
             <ChevronRight className="h-4 w-4" />
             <span className="text-foreground font-medium">{info.title}</span>
           </nav>

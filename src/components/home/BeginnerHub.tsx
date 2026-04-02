@@ -1,5 +1,6 @@
+"use client";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ArrowRight, BookOpen, Play, HelpCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -88,7 +89,7 @@ export function BeginnerHub() {
             </div>
             
             <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 h-14 rounded-full font-semibold">
-              <Link to="/guide">
+              <Link href="/guide">
                 Explore All Guides
                 <ArrowRight className="ml-3 h-5 w-5" />
               </Link>
