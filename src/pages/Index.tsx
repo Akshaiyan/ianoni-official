@@ -8,6 +8,7 @@ import { WhyIanoni } from "@/components/home/WhyIanoni";
 import { TrustSection } from "@/components/home/TrustSection";
 import { BestSellers } from "@/components/home/BestSellers";
 import { BeginnerHub } from "@/components/home/BeginnerHub";
+import { BlogSection } from "@/components/home/BlogSection";
 import { SEO } from "@/components/SEO";
 
 const organizationSchema = {
@@ -67,6 +68,9 @@ const Index = () => {
       
       {/* 8. Beginner's Guide section */}
       <BeginnerHub />
+
+      {/* 9. Blog articles */}
+      <BlogSection />
     </Layout>
   );
 };

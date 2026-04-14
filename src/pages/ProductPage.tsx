@@ -483,6 +483,73 @@ export default function ProductPage() {
           {/* Reviews */}
           <ReviewSection productHandle={product.slug} />
 
+          {/* In-depth content — SEO editorial section */}
+          {isRacket && (
+            <section className="py-14 border-t">
+              <div className="max-w-3xl">
+                <h2 className="text-2xl md:text-3xl font-bold mb-6">
+                  About the IANONI {product.name}
+                </h2>
+                <div className="prose prose-sm prose-neutral dark:prose-invert max-w-none space-y-4 text-muted-foreground leading-relaxed">
+                  <p>
+                    The IANONI {product.name} is built around one principle: giving UK players access to genuine carbon fibre construction without paying £100+. Using the same 3-layer carbon fibre frame and EVA foam core found in rackets costing two or three times more, the {product.name} delivers the pop, responsiveness, and durability that the game demands — at a price that makes sense for beginners and club regulars alike.
+                  </p>
+                  <p>
+                    The carbon fibre frame is the most important factor in a padel racket's performance. Carbon is significantly stiffer than fibreglass, which means more of the energy from your swing transfers into the ball rather than being absorbed by the frame. The result is a more powerful, responsive hit — particularly on volleys and bandejas. The {product.name}&apos;s EVA foam core complements this by providing a consistent, predictable sweet spot that holds up across thousands of shots.
+                  </p>
+                  {product.name === "PR8100" && (
+                    <p>
+                      The PR8100's extended impact zone is its defining feature. The hybrid teardrop shape pushes the sweet spot lower down the face, meaning off-centre hits still produce a clean, controlled result. For beginners still developing swing consistency, this translates directly to fewer frustrating mishits and more time rallying. As your technique improves, the PR8100 scales with you — the same racket that teaches you the basics is capable of supporting your first competitive games too.
+                    </p>
+                  )}
+                  {product.name === "PR8200" && (
+                    <p>
+                      The PR8200 introduces an optimised hole pattern across the face. These perforations aren't cosmetic — they reduce air resistance through the swing and give the ball a slightly different contact point, producing more spin and improved shot feel. If you've got a few sessions under your belt and want a racket that rewards deliberate technique, the PR8200 is the natural next step from entry-level options.
+                    </p>
+                  )}
+                  <p>
+                    All IANONI rackets ship with a protective cover, are compliant with World Padel Tour regulations, and come with a 1-year manufacturer warranty. Free UK delivery is included on every order, typically dispatched within 1–2 business days.
+                  </p>
+                </div>
+
+                <div className="mt-8 grid sm:grid-cols-2 gap-4">
+                  <div className="rounded-xl border bg-card p-5">
+                    <h3 className="font-semibold mb-3">What&apos;s in the box</h3>
+                    <ul className="text-sm text-muted-foreground space-y-1.5">
+                      <li className="flex items-center gap-2"><Check className="h-4 w-4 text-primary shrink-0" />IANONI {product.name} padel racket</li>
+                      <li className="flex items-center gap-2"><Check className="h-4 w-4 text-primary shrink-0" />Protective carry cover</li>
+                      <li className="flex items-center gap-2"><Check className="h-4 w-4 text-primary shrink-0" />Wrist strap (pre-fitted)</li>
+                    </ul>
+                  </div>
+                  <div className="rounded-xl border bg-card p-5">
+                    <h3 className="font-semibold mb-3">Quick facts</h3>
+                    <ul className="text-sm text-muted-foreground space-y-1.5">
+                      <li className="flex items-center gap-2"><Check className="h-4 w-4 text-primary shrink-0" />3-layer carbon fibre frame</li>
+                      <li className="flex items-center gap-2"><Check className="h-4 w-4 text-primary shrink-0" />EVA foam core</li>
+                      <li className="flex items-center gap-2"><Check className="h-4 w-4 text-primary shrink-0" />Suitable for all UK padel courts</li>
+                      <li className="flex items-center gap-2"><Check className="h-4 w-4 text-primary shrink-0" />WPT-regulation compliant</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="mt-6 p-5 rounded-xl bg-primary/5 border border-primary/20">
+                  <p className="text-sm text-muted-foreground">
+                    <span className="font-semibold text-foreground">Not sure which racket to choose?</span>{" "}
+                    Read our{" "}
+                    <Link href="/blog/pr8100-vs-pr8200" className="text-primary hover:underline">
+                      full PR8100 vs PR8200 comparison
+                    </Link>{" "}
+                    or visit our{" "}
+                    <Link href="/blog/best-padel-racket-beginners-uk" className="text-primary hover:underline">
+                      beginner&apos;s buying guide
+                    </Link>{" "}
+                    for detailed advice on picking your first racket.
+                  </p>
+                </div>
+              </div>
+            </section>
+          )}
+
           {/* Related Products */}
           {relatedProducts.length > 0 && (
             <section className="py-12 border-t">

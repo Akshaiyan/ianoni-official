@@ -8,22 +8,24 @@ import { Layout } from "@/components/layout/Layout";
 import { ProductCard } from "@/components/ui/ProductCard";
 import { products, getPadelRackets, type Product } from "@/data/products";
 
-const categoryInfo: Record<string, { title: string; description: string; emoji: string; filter: (p: Product) => boolean; seoTitle: string; seoDescription: string }> = {
+const categoryInfo: Record<string, { title: string; description: string; intro: string; emoji: string; filter: (p: Product) => boolean; seoTitle: string; seoDescription: string }> = {
   padel: {
     title: "Padel Rackets",
-    description: "Premium carbon fiber padel rackets designed for players of all skill levels",
+    description: "Premium carbon fibre padel rackets designed for players of all skill levels",
+    intro: "Every IANONI padel racket is built with 3-layer carbon fibre construction and an EVA foam core — the same materials found in rackets costing 2–3× more. Whether you're picking up a racket for the first time or looking for a reliable club racket, you'll find it here from £39.99 with free UK shipping.",
     emoji: "🎾",
     filter: (p) => p.category === "padel" && !p.isStarterKit,
-    seoTitle: "Padel Rackets | Carbon Fibre Rackets from £39.99 – IANONI",
-    seoDescription: "Browse IANONI carbon fibre padel rackets. Lightweight, durable and designed for all skill levels. From £39.99 with free UK-wide shipping.",
+    seoTitle: "Buy Carbon Fibre Padel Rackets UK | From £39.99 – IANONI",
+    seoDescription: "Shop IANONI carbon fibre padel rackets from £39.99. 3-layer carbon fibre, EVA foam core, 1-year warranty & free UK shipping.",
   },
   accessories: {
     title: "Starter Kits & Accessories",
-    description: "Curated bundles, premium balls, and everything you need",
+    description: "Complete starter kits, premium balls, and everything you need to play",
+    intro: "New to padel and not sure what you need? Our starter kits include a carbon fibre racket, 3 premium padel balls, and a carry bag — everything to get court-ready in one purchase. Or shop individual balls and accessories separately.",
     emoji: "🎾",
     filter: (p) => p.isStarterKit || p.isBallType || false,
-    seoTitle: "Padel Starter Kits & Accessories | IANONI",
-    seoDescription: "Shop IANONI padel starter kits, balls and accessories. Everything you need to start playing padel. From £6.99 with free UK-wide shipping.",
+    seoTitle: "Padel Starter Kits & Accessories UK | IANONI",
+    seoDescription: "Shop IANONI padel starter kits, balls and accessories. Complete starter kits from £44.99. Free UK shipping.",
   },
 };
 
@@ -80,6 +82,33 @@ export default function CollectionPage() {
   const BASE = "https://www.ianoni.co.uk";
   const pageUrl = `${BASE}/${category}`;
 
+  const padelFaqSchema = category === "padel" ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What is the best padel racket for beginners in the UK?",
+        acceptedAnswer: { "@type": "Answer", text: "The IANONI PR8100 is widely considered the best padel racket for beginners in the UK. It features 3-layer carbon fibre construction, an EVA foam core, and a forgiving hybrid shape — all at £39.99 with free UK shipping and a 1-year warranty." },
+      },
+      {
+        "@type": "Question",
+        name: "How much does a good padel racket cost in the UK?",
+        acceptedAnswer: { "@type": "Answer", text: "A quality padel racket in the UK costs between £40–£150. IANONI carbon fibre padel rackets start at £39.99, offering genuine carbon fibre construction at a price most beginner and intermediate players can justify." },
+      },
+      {
+        "@type": "Question",
+        name: "What is the difference between the PR8100 and PR8200?",
+        acceptedAnswer: { "@type": "Answer", text: "Both are carbon fibre padel rackets priced at £39.99. The PR8100 has an extended impact zone optimised for beginners developing consistency. The PR8200 has an optimised hole pattern designed for players who want more shot control and responsiveness as they progress." },
+      },
+      {
+        "@type": "Question",
+        name: "Do IANONI padel rackets come with free UK shipping?",
+        acceptedAnswer: { "@type": "Answer", text: "Yes. All IANONI padel rackets and accessories include free standard UK shipping. Orders are typically dispatched within 1–2 business days." },
+      },
+    ],
+  } : null;
+
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -103,11 +132,13 @@ export default function CollectionPage() {
     })),
   };
 
+  const schemas = [breadcrumbSchema, itemListSchema, ...(padelFaqSchema ? [padelFaqSchema] : [])];
+
   return (
     <Layout>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, itemListSchema]) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
       />
       <section className="pt-28 pb-12 bg-gradient-to-br from-surface to-background">
         <div className="container mx-auto px-4">
@@ -128,6 +159,17 @@ export default function CollectionPage() {
               <p className="text-muted-foreground text-lg">{info.description}</p>
             </div>
           </motion.div>
+
+          {info.intro && (
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.15 }}
+              className="mt-6 text-muted-foreground leading-relaxed max-w-3xl"
+            >
+              {info.intro}
+            </motion.p>
+          )}
         </div>
       </section>
 
@@ -152,6 +194,77 @@ export default function CollectionPage() {
           )}
         </div>
       </section>
+
+      {/* Which racket is right for you? — comparison section */}
+      {category === "padel" && (
+        <section className="py-14 border-t">
+          <div className="container mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <h2 className="text-2xl md:text-3xl font-bold mb-2">Which racket is right for you?</h2>
+              <p className="text-muted-foreground mb-8 max-w-2xl">
+                All IANONI rackets share the same 3-layer carbon fibre construction and EVA foam core. The difference is in shape and sweet spot — here&apos;s how to choose.
+              </p>
+            </motion.div>
+
+            <div className="grid sm:grid-cols-2 gap-6 max-w-3xl">
+              {/* PR8100 */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.05 }}
+                className="rounded-2xl border border-border bg-card p-6 flex flex-col gap-4"
+              >
+                <div>
+                  <span className="text-xs font-semibold uppercase tracking-widest text-primary">Best for beginners</span>
+                  <h3 className="text-xl font-bold mt-1">PR8100</h3>
+                  <p className="text-sm text-muted-foreground mt-1">Extended impact zone — more forgiving on off-centre hits, helping you build consistency from your first session.</p>
+                </div>
+                <ul className="text-sm space-y-1 text-muted-foreground">
+                  <li>✓ Larger sweet spot</li>
+                  <li>✓ Hybrid shape for power & control</li>
+                  <li>✓ Ideal if you&apos;re brand new to padel</li>
+                </ul>
+                <Link href="/product/pr8100-red-black" className="mt-auto text-sm font-medium text-primary hover:underline">
+                  Shop PR8100 →
+                </Link>
+              </motion.div>
+
+              {/* PR8200 */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="rounded-2xl border border-border bg-card p-6 flex flex-col gap-4"
+              >
+                <div>
+                  <span className="text-xs font-semibold uppercase tracking-widest text-primary">Best for improving players</span>
+                  <h3 className="text-xl font-bold mt-1">PR8200</h3>
+                  <p className="text-sm text-muted-foreground mt-1">Optimised hole pattern for improved airflow and shot feel — gives more feedback as your technique develops.</p>
+                </div>
+                <ul className="text-sm space-y-1 text-muted-foreground">
+                  <li>✓ Enhanced shot control</li>
+                  <li>✓ Better spin and touch</li>
+                  <li>✓ Ideal if you&apos;ve played 5+ sessions</li>
+                </ul>
+                <Link href="/product/pr8200-blue-stripe" className="mt-auto text-sm font-medium text-primary hover:underline">
+                  Shop PR8200 →
+                </Link>
+              </motion.div>
+            </div>
+
+            <p className="mt-6 text-sm text-muted-foreground">
+              Not sure? <Link href="/blog/pr8100-vs-pr8200" className="text-primary hover:underline">Read our full PR8100 vs PR8200 comparison →</Link>
+            </p>
+          </div>
+        </section>
+      )}
 
       {/* Related reading — internal links for SEO */}
       {category === "padel" && (
