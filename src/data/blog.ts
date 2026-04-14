@@ -546,6 +546,11 @@ export const blogPosts: BlogPost[] = [
           "The growth of padel in the UK means courts are now available in most cities. If you haven't tried it yet, it's worth booking a session.",
       },
     ],
+    featuredProducts: [
+      { text: "IANONI PR8100 – Ideal first racket for tennis players (£39.99)", href: "/product/pr8100-red-black" },
+      { text: "IANONI PR8200 – Great for players with racket sport experience (£39.99)", href: "/product/pr8200-blue-stripe" },
+      { text: "PR8100 Starter Kit – Racket, balls & bag (£44.99)", href: "/product/starter-kit-red-black" },
+    ],
   },
 
   // ─────────────────────────────────────────────────────────────────────────────
@@ -629,6 +634,11 @@ export const blogPosts: BlogPost[] = [
         content:
           "Start with a quality carbon fibre racket under £50, play regularly, and only upgrade when you've outgrown it. That's the sensible approach — and the PR8100 gives you a genuinely high ceiling before you get to that point.",
       },
+    ],
+    featuredProducts: [
+      { text: "IANONI PR8100 Red/Black – £39.99", href: "/product/pr8100-red-black" },
+      { text: "IANONI PR8100 Blue/Pink – £39.99", href: "/product/pr8100-blue-pink" },
+      { text: "PR8100 Starter Kit – Racket, balls & bag (£44.99)", href: "/product/starter-kit-red-black" },
     ],
   },
 
@@ -780,6 +790,351 @@ export const blogPosts: BlogPost[] = [
         content:
           "Book a court with three others, focus on keeping the ball in play, and let the enjoyment of the game do the rest. You'll be back for a second session before the first one's over.",
       },
+    ],
+    featuredProducts: [
+      { text: "PR8100 Starter Kit – Everything you need to start (£44.99)", href: "/product/starter-kit-red-black" },
+      { text: "IANONI PR8100 Red/Black – Best beginner racket (£39.99)", href: "/product/pr8100-red-black" },
+      { text: "IANONI Pro Padel Balls – 3 balls (£7.99)", href: "/product/ianoni-pro-padel-balls" },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // POST 7
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    slug: "padel-rules-uk",
+    title: "Padel Rules UK: The Complete Guide (2026)",
+    metaDescription:
+      "Everything you need to know about padel rules in the UK — serving, scoring, wall play, faults, and the differences from tennis. Updated for 2026.",
+    excerpt:
+      "Padel has its own set of rules that trip up almost every beginner. Here's the complete guide to padel rules in the UK — from serving to scoring to wall play.",
+    publishDate: "2026-04-01",
+    readTime: "8 min read",
+    category: "Padel 101",
+    coverImage: "/blog/padel-rules-cover.jpg",
+    body: [
+      { type: "p", content: "Padel is one of the fastest-growing sports in the UK, but its rules aren't always obvious — especially if you're coming from a tennis background. The wall play, the underarm serve, and the scoring all have their own specific rules that you need to understand before your first game." },
+      { type: "p", content: "This guide covers everything: the full rules of padel as played in the UK, the common faults beginners make, and the grey areas that cause the most arguments on court." },
+      { type: "h2", content: "The Court" },
+      { type: "ul", content: [
+        "Padel is always played as doubles — four players on a 20m × 10m enclosed court.",
+        "The court is divided by a net: 88cm high at the centre, 92cm at the posts.",
+        "The back and side walls (glass and mesh) are part of the court and in play.",
+        "Each half of the court has a service box marked by a service line running parallel to the net.",
+      ]},
+      { type: "h2", content: "The Serve" },
+      { type: "p", content: "The padel serve is underarm — one of the most important differences from tennis." },
+      { type: "ul", content: [
+        "The server stands behind the service line in either the right or left service box.",
+        "The ball must be bounced on the ground and struck at or below waist height.",
+        "The serve must land diagonally in the opposite service box.",
+        "After landing in the service box, the ball may hit the back wall — this is still a valid serve.",
+        "If the ball hits the side wall before the back wall, it is a fault.",
+        "Two consecutive faults = double fault = point to the receivers.",
+        "A let (net cord serve that lands correctly) is replayed — there is no limit on lets.",
+      ]},
+      { type: "h2", content: "How Points Are Won and Lost" },
+      { type: "ul", content: [
+        "The ball bounces twice on your side — you lose the point.",
+        "The ball hits the net — you lose the point.",
+        "You hit the ball out of the court enclosure — you lose the point.",
+        "You hit the ball into the wall on your own side before it crosses the net — you lose the point.",
+        "After the ball bounces on your side, it can hit any wall and remain playable.",
+        "You can play the ball off the opponent's walls on your side of the net (after it bounces).",
+      ]},
+      { type: "h2", content: "Wall Play Rules" },
+      { type: "p", content: "Wall play is what makes padel unique and requires specific rules:" },
+      { type: "ul", content: [
+        "After the ball bounces once on your side, it can hit any wall (back or side) and is still in play.",
+        "You must return the ball before it bounces a second time — not before it hits the wall.",
+        "You can deliberately play the ball off the back wall as an offensive shot.",
+        "If the ball exits the court through an opening (door), play continues — you can play it back in.",
+        "A ball that goes over the back fence and out of the court enclosure entirely is out.",
+      ]},
+      { type: "h2", content: "Scoring" },
+      { type: "p", content: "Padel uses the same scoring system as tennis: 15, 30, 40, game. Sets are won at 6 games with a tiebreak at 6-6. Matches are typically best of 3 sets." },
+      { type: "p", content: "One common variation in UK club play is the 'golden point' at deuce (40-40): a single rally decides the game, with the receiving pair choosing which side to receive from. Check with your venue whether they play golden point or advantage scoring." },
+      { type: "h2", content: "Common Rule Mistakes" },
+      { type: "ul", content: [
+        "Letting the ball hit the back wall before returning it — wrong. You must return it after one bounce, regardless of walls.",
+        "Serving from outside the service box — the server must be within the box until the ball is struck.",
+        "Hitting the ball before it bounces in the service box — the ball must bounce in the box first on the serve.",
+        "Calling a fault when the serve hits the back wall — this is legal, not a fault.",
+        "Playing the ball after two bounces — if the ball bounces twice, the point is lost, even if it then comes back off the wall.",
+      ]},
+      { type: "callout", content: "New to padel? Most UK clubs offer beginner sessions where the rules are explained before you play. Booking one before your first game is highly recommended — it makes everything click much faster." },
+    ],
+    featuredProducts: [
+      { text: "PR8100 Starter Kit – Perfect for your first game (£44.99)", href: "/product/starter-kit-red-black" },
+      { text: "IANONI PR8100 – Best beginner padel racket (£39.99)", href: "/product/pr8100-red-black" },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // POST 8
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    slug: "padel-shoes-guide-uk",
+    title: "Padel Shoes UK: What to Look For and What to Avoid (2026)",
+    metaDescription:
+      "Playing padel in the wrong shoes affects your game and risks injury. Here's what to look for in padel shoes in the UK — grip, support, sole type, and our top recommendations.",
+    excerpt:
+      "Most beginners underestimate how much shoes matter in padel. The wrong footwear affects your movement, increases injury risk, and makes the court feel wrong. Here's what you actually need.",
+    publishDate: "2026-03-20",
+    readTime: "6 min read",
+    category: "Buying Guides",
+    coverImage: "/blog/padel-shoes-cover.jpg",
+    body: [
+      { type: "p", content: "When most people start padel, they focus on the racket and forget about footwear. This is a mistake. Padel involves constant lateral movement, quick direction changes, and explosive pushes off the back wall. The wrong shoes make all of this harder — and increase your injury risk significantly." },
+      { type: "p", content: "Here's what to look for when buying padel shoes in the UK." },
+      { type: "h2", content: "Can You Play Padel in Tennis Shoes?" },
+      { type: "p", content: "Yes, and most beginners do. For your first few sessions, tennis shoes are fine. The sole pattern on tennis shoes is designed for similar lateral movement on hard courts, and they'll do the job while you're learning the basics." },
+      { type: "p", content: "Where tennis shoes fall short for padel is the sole pattern for artificial grass courts. Many UK padel venues use artificial turf surfaces, and tennis shoes (designed for hard courts) don't provide the right grip or pivot on turf. If your local court is turf, dedicated padel or padel-specific shoes will make a meaningful difference." },
+      { type: "h2", content: "Can You Use Running Shoes?" },
+      { type: "p", content: "No. Running shoes are designed for forward motion and have cushioning that destabilises lateral movement. Playing padel in running shoes puts your ankles at real risk during the side-to-side movements the game demands. This isn't overstated — ankle sprains are the most common padel injury, and footwear is a significant factor." },
+      { type: "h2", content: "What to Look for in Padel Shoes" },
+      { type: "ul", content: [
+        "Herringbone or clay-court sole pattern — provides grip and the right amount of slide on both hard and turf courts. Avoid smooth soles and deep-lug trail patterns.",
+        "Low profile — padel shoes should sit close to the ground for better lateral stability. High-cushioned shoes increase ankle roll risk.",
+        "Reinforced toe box — you'll drag your toe on serves and push hard off your toe when playing at the net. Reinforcement here extends the shoe's life significantly.",
+        "Lateral support — look for a firm midsole and a snug upper that holds the foot during direction changes.",
+        "Breathability — padel is an intense sport. Mesh uppers keep your feet cooler during long sessions.",
+      ]},
+      { type: "h2", content: "Court Surface Matters" },
+      { type: "p", content: "UK padel courts use a variety of surfaces. Check before you buy:" },
+      { type: "ul", content: [
+        "Artificial grass (most common in UK outdoor venues) — requires a herringbone or omni-directional sole. Dedicated padel shoes or all-court tennis shoes work well.",
+        "Hard acrylic (indoor courts) — any padel or tennis shoe with a herringbone sole works well.",
+        "Concrete or tarmac (some outdoor courts) — a harder sole is fine; softer padel-specific soles wear faster on abrasive surfaces.",
+      ]},
+      { type: "h2", content: "Budget Guide" },
+      { type: "ul", content: [
+        "Under £50: Entry-level padel or all-court tennis shoes. Brands like Wilson, Head, and Babolat offer entry options. Suitable for occasional play.",
+        "£50–£100: Mid-range padel shoes with better lateral support and durability. Recommended for regular club players.",
+        "£100+: High-performance padel shoes with advanced materials. Worth it for competitive players training multiple times per week.",
+      ]},
+      { type: "callout", content: "For most UK club players, a mid-range padel shoe (£50–£100) is the sweet spot. Pair it with a quality racket and you'll have everything you need for serious improvement." },
+    ],
+    featuredProducts: [
+      { text: "IANONI PR8100 – Best value carbon fibre racket (£39.99)", href: "/product/pr8100-red-black" },
+      { text: "PR8100 Starter Kit – Racket, balls & bag bundle (£44.99)", href: "/product/starter-kit-red-black" },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // POST 9
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    slug: "padel-courts-near-me-uk",
+    title: "Padel Courts Near Me: How to Find and Book in the UK (2026)",
+    metaDescription:
+      "Looking for padel courts near you in the UK? Here's how to find, compare, and book padel courts across England, Scotland, and Wales — plus what to expect when you arrive.",
+    excerpt:
+      "The UK now has over 500 padel courts and counting. Here's how to find the best ones near you, what to expect at your first visit, and how to make the most of every session.",
+    publishDate: "2026-03-10",
+    readTime: "6 min read",
+    category: "Padel 101",
+    coverImage: "/blog/padel-courts-cover.jpg",
+    body: [
+      { type: "p", content: "The padel boom in the UK has been rapid. In 2020, there were fewer than 50 padel courts in the entire country. By 2026, there are over 500 — with new venues opening monthly across England, Scotland, and Wales. Finding a court near you has never been easier." },
+      { type: "h2", content: "How to Find Padel Courts Near You" },
+      { type: "ul", content: [
+        "Just Padel (justpadel.com) — the largest padel booking platform in the UK, with hundreds of venues listed and real-time availability.",
+        "Playtomic — another major booking app with padel courts across the UK. Allows you to search by location and filter by surface type.",
+        "Google Maps — search 'padel courts near me' for local results, reviews, and directions. Many venues have Google Business profiles with booking links.",
+        "David Lloyd and Nuffield Health clubs — both chains have added padel courts to many UK sites. If you're already a member, check your local club's facilities.",
+        "Local tennis clubs — many UK tennis clubs have added padel courts to their facilities. Check the LTA's venue finder for affiliated clubs offering padel.",
+      ]},
+      { type: "h2", content: "What to Expect at Your First Session" },
+      { type: "p", content: "Most UK padel venues are welcoming to complete beginners. Here's what a typical visit looks like:" },
+      { type: "ul", content: [
+        "Book in advance — padel courts are in high demand, particularly evenings and weekends. Most venues require online booking.",
+        "Racket hire — almost all venues offer racket hire (usually £3–£5 per racket). Balls are typically included in the court fee.",
+        "Court fees — expect to pay £15–£30 for a 90-minute slot, split between four players. Some venues charge per person.",
+        "Beginner sessions — many venues offer organised beginner sessions with a coach, which is the fastest way to learn the rules and basic technique.",
+        "What to wear — comfortable sports clothing and court shoes (or tennis shoes for your first session). Bring a water bottle.",
+      ]},
+      { type: "h2", content: "Types of Padel Venues in the UK" },
+      { type: "ul", content: [
+        "Dedicated padel clubs — purpose-built facilities with multiple courts, often with coaching and membership options. Best for regular players.",
+        "Leisure centre and gym additions — courts added to existing facilities. Usually cheaper but fewer courts and less atmosphere.",
+        "Tennis club conversions — existing tennis clubs that have added padel. Often great value for members, with a built-in community.",
+        "Pop-up and temporary venues — some venues operate seasonally or in temporary structures. Check operating hours carefully.",
+      ]},
+      { type: "h2", content: "What Does It Cost to Play Padel in the UK?" },
+      { type: "p", content: "Court hire typically ranges from £15–£30 for a 90-minute slot. Split four ways, that's £4–£8 per person — cheaper than most racket sports. Some clubs offer membership packages that reduce the per-session cost significantly for regular players." },
+      { type: "h2", content: "Do You Need Your Own Equipment?" },
+      { type: "p", content: "Not for your first session — most venues have hire rackets. But if you start playing regularly (more than once a fortnight), investing in your own racket is worth it. Hire rackets tend to be worn and imprecise; your own racket gives you consistent feel and helps you improve faster." },
+      { type: "callout", content: "The UK padel scene is growing fast. Most cities now have multiple venues — and in London, Manchester, Birmingham, and Edinburgh, you're never far from a court." },
+    ],
+    featuredProducts: [
+      { text: "IANONI PR8100 – Time to get your own racket (£39.99)", href: "/product/pr8100-red-black" },
+      { text: "IANONI Pro Padel Balls – 3 balls (£7.99)", href: "/product/ianoni-pro-padel-balls" },
+      { text: "PR8100 Starter Kit – Racket, balls & bag (£44.99)", href: "/product/starter-kit-red-black" },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // POST 10
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    slug: "padel-for-kids-uk",
+    title: "Padel for Kids UK: Age Guide, Equipment & Getting Started (2026)",
+    metaDescription:
+      "Is padel suitable for kids? Yes — and it's one of the best racket sports for children. Here's everything you need to know about getting kids into padel in the UK.",
+    excerpt:
+      "Padel is one of the most child-friendly racket sports available. The smaller court, social format, and easy learning curve make it ideal for children from around age 6 upwards.",
+    publishDate: "2026-02-28",
+    readTime: "6 min read",
+    category: "Padel 101",
+    coverImage: "/blog/padel-kids-cover.jpg",
+    body: [
+      { type: "p", content: "Padel is one of the best racket sports for children. The court is smaller than tennis, the walls mean the ball stays in play longer (which keeps rallies going and maintains engagement), and the social doubles format is naturally fun. It's a sport that rewards coordination and reading the game rather than raw power — which suits children at every stage of development." },
+      { type: "h2", content: "What Age Can Kids Start Playing Padel?" },
+      { type: "p", content: "Most children can start playing padel from around age 6–7, though this depends on the child. The key factor isn't age but whether they can track a moving ball and understand the basic concept of keeping it in play. Many UK clubs offer junior sessions from age 6, and some start even younger with modified equipment." },
+      { type: "ul", content: [
+        "Ages 5–7: Introduction sessions with soft foam balls and smaller rackets. Focus is on fun and basic coordination.",
+        "Ages 8–10: Standard junior padel on full or three-quarter courts. Children can begin learning proper technique.",
+        "Ages 11–14: Full court padel with adult rules. Many children this age can compete in junior club events.",
+        "Ages 15+: Play alongside adults. Many teenage padel players are competitive with adult club players within a year of starting.",
+      ]},
+      { type: "h2", content: "Why Padel is Great for Kids" },
+      { type: "ul", content: [
+        "Easy to rally — the walls mean the ball stays in play longer, which keeps kids engaged and builds confidence quickly.",
+        "Social — always played as doubles, so children are always playing with others. Great for developing teamwork.",
+        "Fast to learn — most children can have a fun, competitive game within their first session.",
+        "Low injury risk — the underarm serve and smaller court mean less strain on young bodies than tennis or squash.",
+        "Transferable skills — padel develops hand-eye coordination, spatial awareness, and movement patterns that transfer to other sports.",
+      ]},
+      { type: "h2", content: "Equipment for Junior Padel Players" },
+      { type: "p", content: "Junior padel equipment is sized for smaller hands and lighter swing weights:" },
+      { type: "ul", content: [
+        "Junior rackets — typically 45–50cm long (vs 45.5cm for adults). Lighter (250–310g) and with smaller grips. Available from most padel brands.",
+        "Junior balls — some UK clubs use slower, lower-compression balls for younger juniors to extend rallies and make learning easier.",
+        "Shoes — any non-marking court or tennis shoes work fine for beginners. Padel-specific junior shoes are available but not essential until they're playing regularly.",
+      ]},
+      { type: "h2", content: "Finding Junior Padel in the UK" },
+      { type: "p", content: "Junior padel is growing rapidly in the UK. Options for getting kids involved:" },
+      { type: "ul", content: [
+        "Club junior sessions — many UK padel clubs run weekly junior sessions with qualified coaches.",
+        "School programmes — some UK schools have added padel to their PE curriculum. Check with your local school or sports centre.",
+        "LTA Junior Padel — the Lawn Tennis Association (which also governs padel in the UK) runs junior development programmes. Visit the LTA website for registered venues.",
+        "Family court hire — simply book a court and play with your children. Many venues offer discounted family rates.",
+      ]},
+      { type: "callout", content: "Most UK padel clubs will hire rackets in junior sizes. Call ahead to confirm they have junior equipment before booking a session for younger children." },
+    ],
+    featuredProducts: [
+      { text: "IANONI PR8100 – Lightweight option for older juniors (£39.99)", href: "/product/pr8100-blue-pink" },
+      { text: "IANONI Pro Padel Balls – Pack of 3 (£7.99)", href: "/product/ianoni-pro-padel-balls" },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // POST 11
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    slug: "padel-doubles-tactics",
+    title: "Padel Doubles Tactics: How to Win More Points (2026)",
+    metaDescription:
+      "Improve your padel doubles game with these tactical principles. Covers net positioning, the lob, defending from the back wall, and how to work with your partner to dominate rallies.",
+    excerpt:
+      "Most padel points are won and lost through positioning and decision-making, not technique. Here are the tactical principles that will immediately improve your doubles game.",
+    publishDate: "2026-02-15",
+    readTime: "8 min read",
+    category: "Training & Tactics",
+    coverImage: "/blog/padel-tactics-cover.jpg",
+    body: [
+      { type: "p", content: "Padel is fundamentally a tactical sport. Unlike tennis, where raw power and serve dominance play a huge role, padel rewards patience, positioning, and smart decision-making. Two technically average players who understand tactics will consistently beat two technically better players who don't." },
+      { type: "p", content: "Here are the tactical principles that make the biggest difference at club level." },
+      { type: "h2", content: "The Golden Rule: Control the Net" },
+      { type: "p", content: "The most important tactical principle in padel is simple: the team at the net wins the point. Net position gives you the best angles for volleys and smashes, forces your opponents into defensive positions, and puts time pressure on every shot they play." },
+      { type: "p", content: "Every tactical decision in padel should be evaluated through this lens: does it help us get to the net, or does it keep us there?" },
+      { type: "h2", content: "How to Get to the Net" },
+      { type: "ul", content: [
+        "Follow the serve forward — after serving, both players should advance toward the net. Don't serve and stay at the baseline.",
+        "Use the lob to advance — if you're at the baseline under pressure, a high lob that pushes opponents back gives you time to advance to the net.",
+        "Attack short balls — any ball that lands in the middle of the court is an opportunity to come forward. Hit it with pace and follow it to the net.",
+        "Bandeja and smash for position — don't always try to win the point outright from the back. A well-placed bandeja (overhead slice) that pins opponents to the back wall lets you advance while maintaining control.",
+      ]},
+      { type: "h2", content: "The Lob: Your Most Important Shot" },
+      { type: "p", content: "The lob is the most underused shot by beginners and the most important shot by experienced players. A high, deep lob over your opponents when they're at the net does three things: forces them back, gives you time to advance, and resets a point you were losing." },
+      { type: "ul", content: [
+        "Lob deep — aim for the back wall. A lob that bounces near the service line is attackable; one that bounces near the back wall and continues off the glass is much harder to deal with.",
+        "Lob when under pressure — this is the number one tactical adjustment beginners need to make. When you're pulled wide or pushed deep, lob instead of trying a difficult passing shot.",
+        "Vary the pace — a mix of fast drives and slow lobs keeps your opponents guessing and prevents them from timing their volleys confidently.",
+      ]},
+      { type: "h2", content: "Playing from the Back Wall" },
+      { type: "p", content: "When you're pushed to the back of the court and the ball comes off the back glass, you have several options:" },
+      { type: "ul", content: [
+        "Lob — almost always the right choice when at the back wall under pressure.",
+        "Vibora — a fast, flat drive hit with backspin, aimed at the side wall near the net post. High-risk, high-reward.",
+        "Globo — a very high, very deep lob that goes off the back wall and comes back toward the net. Used to reset completely when under extreme pressure.",
+        "Never try to pass down the middle — the middle is covered by two opponents at the net. Play to the sides or lob over them.",
+      ]},
+      { type: "h2", content: "Partner Communication" },
+      { type: "ul", content: [
+        "Call 'mine' or 'yours' for any ball in the middle of the court. Most unforced errors at club level come from miscommunication.",
+        "Move together — when one player moves wide, the other shifts to cover the centre. You should maintain a connected lateral position throughout the point.",
+        "Discuss tactics between points — a simple 'let's attack their backhand' or 'keep lobbing' gives both players the same game plan.",
+        "Support your partner — if your partner is under pressure at the back, hold your position and wait for them to reset with a lob, then advance together.",
+      ]},
+      { type: "h2", content: "Common Tactical Mistakes" },
+      { type: "ul", content: [
+        "Staying at the baseline after the serve — this gives the receiving team the net and the initiative immediately.",
+        "Going for winners from the back wall — the percentage play is almost always a lob. Trying to pass two players at the net from the baseline loses more points than it wins.",
+        "Attacking when out of position — don't try to smash when you're off-balance or too far from the net. A controlled lob is better than a smash into the net.",
+        "Playing independently — padel is a doubles game. Ignoring your partner's position leads to court gaps your opponents will exploit.",
+      ]},
+      { type: "callout", content: "The fastest way to improve tactically is to play with better players. Watch how they position themselves, when they lob, and when they attack. The patterns become obvious when you see them executed correctly." },
+    ],
+    featuredProducts: [
+      { text: "IANONI PR8200 – Built for tactical, consistent play (£39.99)", href: "/product/pr8200-blue-stripe" },
+      { text: "IANONI PR8100 – Great all-round beginner to intermediate racket (£39.99)", href: "/product/pr8100-red-black" },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // POST 12
+  // ─────────────────────────────────────────────────────────────────────────────
+  {
+    slug: "how-to-improve-at-padel",
+    title: "How to Improve at Padel: 10 Tips That Actually Work",
+    metaDescription:
+      "Want to improve your padel game faster? These 10 practical tips cover technique, tactics, training, and equipment — for beginners and intermediate players in the UK.",
+    excerpt:
+      "Most padel players plateau quickly because they keep doing the same things. Here are 10 evidence-based tips that will genuinely accelerate your improvement.",
+    publishDate: "2026-04-07",
+    readTime: "7 min read",
+    category: "Training & Tactics",
+    coverImage: "/blog/improve-padel-cover.jpg",
+    body: [
+      { type: "p", content: "Padel is one of those sports where improvement feels fast at first and then slows sharply. Most players go from 'complete beginner' to 'club regular' within a few months — and then stay at that level for years. The good news: there are specific, actionable things you can do to keep improving." },
+      { type: "h2", content: "1. Play More, But With Intent" },
+      { type: "p", content: "Playing more padel is the single most effective way to improve. But random court time has diminishing returns. Try to identify one specific thing to work on each session — your serve, your lob depth, your net positioning — rather than just playing points." },
+      { type: "h2", content: "2. Take At Least One Coaching Session" },
+      { type: "p", content: "Even one session with a qualified padel coach can unlock months of improvement. Most UK venues offer individual or group lessons. A coach will identify the habits that are holding you back — things you can't see yourself because they're ingrained." },
+      { type: "h2", content: "3. Improve Your Lob" },
+      { type: "p", content: "The lob is the most important shot in padel and the most underdeveloped shot in most club players' games. Practice hitting deep lobs from the baseline — they should land within a metre of the back wall. A reliable lob transforms your defensive game." },
+      { type: "h2", content: "4. Work on the Bandeja" },
+      { type: "p", content: "The bandeja (a slice overhead hit with slice and control rather than power) is the shot that separates intermediate players from advanced ones. It lets you put the ball away from an overhead position while maintaining your net position. Most club players try to smash everything — the bandeja is often the better choice." },
+      { type: "h2", content: "5. Play With Better Players" },
+      { type: "p", content: "This is the fastest way to improve. Playing with better players forces you to move more quickly, read the ball earlier, and think tactically. You'll lose points, but you'll also improve faster than you would playing against players at your own level every session." },
+      { type: "h2", content: "6. Practise Your Serve" },
+      { type: "p", content: "The padel serve is underarm and technically simple, but consistency and placement matter. A deep serve to the body or a short serve angled to the side wall can create immediate pressure. Practise serving to specific targets rather than just getting the ball in." },
+      { type: "h2", content: "7. Watch Your Positioning" },
+      { type: "p", content: "Video yourself playing if possible. Most players are surprised by how often they're caught in the wrong position — too far back, too wide, or not moving in sync with their partner. Positioning is free to improve; you don't need better technique, just better awareness." },
+      { type: "h2", content: "8. Build Your Fitness" },
+      { type: "p", content: "Padel is physically demanding — particularly the lateral movement and the explosive short sprints. General fitness (cardio and agility) directly translates to better performance. Even simple agility ladder drills and lateral movement exercises make a noticeable difference." },
+      { type: "h2", content: "9. Use the Right Equipment" },
+      { type: "p", content: "A racket that doesn't suit your level genuinely holds you back. Beginners benefit from a lighter, more forgiving round-shaped racket that helps get the ball where you want it. Advanced players need a heavier, more powerful diamond-shaped racket. Using the wrong type for your level makes technique harder to develop." },
+      { type: "h2", content: "10. Be Consistent, Not Powerful" },
+      { type: "p", content: "The most common mistake at club level is trying to hit winners when the situation doesn't call for it. Padel rewards consistency, patience, and tactical shot selection. More often than not, the team that makes fewer errors wins — not the team that hits more winners." },
+      { type: "callout", content: "Improvement in padel compounds. Work on one thing at a time, apply it consistently, and you'll be surprised how quickly your overall game develops." },
+    ],
+    featuredProducts: [
+      { text: "IANONI PR8100 – Forgiving beginner to intermediate racket (£39.99)", href: "/product/pr8100-red-black" },
+      { text: "IANONI PR8200 – Step up for developing players (£39.99)", href: "/product/pr8200-blue-stripe" },
+      { text: "Super Power – For players ready to level up (£49.99)", href: "/product/super-power-pink" },
     ],
   },
 ];

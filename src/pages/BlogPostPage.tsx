@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { notFound } from "next/navigation";
 import { motion } from "framer-motion";
-import { ChevronRight, Clock, Tag, ArrowLeft } from "lucide-react";
+import { ChevronRight, Clock, Tag, ArrowLeft, ShoppingBag } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { getBlogPostBySlug, blogPosts, type BlogBlock } from "@/data/blog";
 
@@ -76,9 +76,11 @@ export default function BlogPostPage() {
   const slug = params?.slug as string | undefined;
   const post = slug ? getBlogPostBySlug(slug) : undefined;
 
-  if (!post) { notFound(); return null; }
+  if (!post) { notFound(); }
 
-  const related = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 3);
+  const sameCategory = blogPosts.filter((p) => p.slug !== post.slug && p.category === post.category);
+  const otherPosts = blogPosts.filter((p) => p.slug !== post.slug && p.category !== post.category);
+  const related = [...sameCategory, ...otherPosts].slice(0, 3);
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -109,6 +111,8 @@ export default function BlogPostPage() {
 
   return (
     <Layout>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <article className="pt-28 pb-20">
         <div className="container mx-auto px-4 max-w-3xl">
           {/* Breadcrumb */}
@@ -156,6 +160,29 @@ export default function BlogPostPage() {
           >
             {post.body.map((block, i) => renderBlock(block, i))}
           </motion.div>
+
+          {/* Shop These Products */}
+          {post.featuredProducts && post.featuredProducts.length > 0 && (
+            <div className="mt-12 border border-border rounded-2xl overflow-hidden">
+              <div className="bg-muted/50 px-6 py-4 border-b border-border flex items-center gap-2">
+                <ShoppingBag className="h-4 w-4 text-primary" />
+                <span className="font-semibold text-sm">Shop These Products</span>
+              </div>
+              <ul className="divide-y divide-border">
+                {post.featuredProducts.map((product) => (
+                  <li key={product.href}>
+                    <Link
+                      href={product.href}
+                      className="flex items-center justify-between px-6 py-4 hover:bg-muted/30 transition-colors group"
+                    >
+                      <span className="text-sm font-medium group-hover:text-primary transition-colors">{product.text}</span>
+                      <span className="text-xs text-primary font-medium shrink-0 ml-4">View →</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           {/* CTA */}
           <div className="mt-16 bg-primary/5 border border-primary/20 rounded-2xl p-8 text-center">
