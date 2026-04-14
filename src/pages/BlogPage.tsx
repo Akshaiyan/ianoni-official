@@ -21,9 +21,24 @@ export default function BlogPage() {
           </nav>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Padel Blog</h1>
-            <p className="text-muted-foreground text-lg max-w-xl">
+            <p className="text-muted-foreground text-lg max-w-xl mb-6">
               Guides, buying advice, rules and tips to help you play better padel.
             </p>
+            <div className="flex flex-wrap gap-2">
+              {[
+                { label: "Buying Guides", slug: "buying-guides" },
+                { label: "Padel 101", slug: "padel-101" },
+                { label: "Training & Tactics", slug: "training-tactics" },
+              ].map((cat) => (
+                <Link
+                  key={cat.slug}
+                  href={`/blog/category/${cat.slug}`}
+                  className="px-4 py-1.5 rounded-full border border-border text-sm hover:border-primary hover:text-primary transition-colors"
+                >
+                  {cat.label}
+                </Link>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>

@@ -152,6 +152,55 @@ export default function CollectionPage() {
           )}
         </div>
       </section>
+
+      {/* Related reading — internal links for SEO */}
+      {category === "padel" && (
+        <section className="py-12 border-t bg-muted/20">
+          <div className="container mx-auto px-4">
+            <h2 className="text-xl font-bold mb-6">Padel Buying Guides</h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                { title: "Best Padel Racket for Beginners UK", href: "/blog/best-padel-racket-beginners-uk" },
+                { title: "How to Choose a Padel Racket", href: "/blog/how-to-choose-padel-racket" },
+                { title: "Best Padel Racket Under £50", href: "/blog/best-padel-racket-under-50" },
+                { title: "Carbon Fibre Padel Rackets Explained", href: "/blog/carbon-fibre-padel-rackets" },
+              ].map((article) => (
+                <Link
+                  key={article.href}
+                  href={article.href}
+                  className="p-4 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors group"
+                >
+                  <p className="text-sm font-medium group-hover:text-primary transition-colors leading-snug">{article.title}</p>
+                  <span className="text-xs text-primary mt-2 block group-hover:underline">Read guide →</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+      {category === "accessories" && (
+        <section className="py-12 border-t bg-muted/20">
+          <div className="container mx-auto px-4">
+            <h2 className="text-xl font-bold mb-6">Getting Started with Padel</h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                { title: "How to Play Padel: Rules & Tips for Beginners", href: "/blog/how-to-play-padel-beginners-guide" },
+                { title: "Padel Rules UK: The Complete Guide", href: "/blog/padel-rules-uk" },
+                { title: "Padel Courts Near Me: How to Find and Book", href: "/blog/padel-courts-near-me-uk" },
+              ].map((article) => (
+                <Link
+                  key={article.href}
+                  href={article.href}
+                  className="p-4 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors group"
+                >
+                  <p className="text-sm font-medium group-hover:text-primary transition-colors leading-snug">{article.title}</p>
+                  <span className="text-xs text-primary mt-2 block group-hover:underline">Read guide →</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
     </Layout>
   );
 }

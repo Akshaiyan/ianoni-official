@@ -68,6 +68,16 @@ function renderBlock(block: BlogBlock, i: number) {
     );
   }
 
+  if (block.type === "html") {
+    return (
+      <p
+        key={key}
+        className="text-muted-foreground leading-relaxed mb-4"
+        dangerouslySetInnerHTML={{ __html: block.content as string }}
+      />
+    );
+  }
+
   return null;
 }
 

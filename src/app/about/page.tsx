@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import AboutPageComponent from "@/pages/AboutPage";
 
 export const metadata: Metadata = {
-  title: "About IANONI | Our Story & Mission",
+  title: "About IANONI | Premium Padel Rackets Made Accessible",
   description:
-    "IANONI was built to make premium padel accessible to everyone.",
+    "IANONI was built to make high-performance carbon fibre padel rackets accessible to every player. Learn about our mission, our products, and why thousands of UK players trust IANONI.",
   alternates: { canonical: "https://www.ianoni.co.uk/about" },
 };
 

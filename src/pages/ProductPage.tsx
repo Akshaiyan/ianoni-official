@@ -114,7 +114,58 @@ export default function ProductPage() {
     ],
   };
 
-  const seoTitle = `${product.name}${product.colorVariant ? ` ${product.colorVariant}` : ""} | IANONI Padel Racket – £${price.toFixed(2)}`;
+  const productDisplayName = `${product.name}${product.colorVariant ? ` ${product.colorVariant}` : ""}`;
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: `Is the ${product.name} suitable for beginners?`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `Yes. The ${product.name} is designed for beginners to intermediate players. Its lightweight construction and forgiving shape make it easy to control while you develop your technique. It's one of the best-value carbon fibre padel rackets available in the UK for new players.`,
+        },
+      },
+      {
+        "@type": "Question",
+        name: `What is the ${product.name} made of?`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: product.specs?.material
+            ? `The ${product.name} features ${product.specs.material}. It also has an EVA foam core for consistent performance and durability.`
+            : `The ${product.name} features 3-layer carbon fibre construction with an EVA foam core for consistent performance and durability.`,
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How long does delivery take?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "IANONI offers free standard UK shipping on all orders. Orders are typically dispatched within 1–2 business days and delivered within 2–5 business days.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What warranty comes with this padel racket?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "All IANONI padel rackets come with a 1-year warranty against manufacturing defects. If there's an issue with your racket, contact us and we'll make it right.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can I return this padel racket?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. IANONI offers a 30-day return policy on all rackets. If you're not happy with your purchase for any reason, you can return it within 30 days for a full refund.",
+        },
+      },
+    ],
+  };
+
+  const seoTitle = `${productDisplayName} | IANONI Padel Racket – £${price.toFixed(2)}`;
   const seoDescription = product.description.slice(0, 155) + (product.description.length > 155 ? "…" : "");
 
   const handleAddToCart = async () => {
@@ -178,6 +229,7 @@ export default function ProductPage() {
         ogType="product"
         schema={[productSchema, breadcrumbSchema]}
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="pt-24">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}

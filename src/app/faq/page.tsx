@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import FAQPageComponent from "@/pages/FAQPage";
 
 export const metadata: Metadata = {
-  title: "Padel Racket FAQs | Common Questions Answered",
+  title: "Padel Racket FAQs | Shipping, Warranty & Specs Answered",
   description:
-    "Got questions about IANONI padel rackets? Find answers about racket specs, shipping, warranty and more.",
+    "Common questions about IANONI padel rackets answered — shipping times, warranty, returns, racket materials, sizing, and which racket is right for you.",
   alternates: { canonical: "https://www.ianoni.co.uk/faq" },
 };
 

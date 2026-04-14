@@ -1,5 +1,5 @@
 export interface BlogBlock {
-  type: "h2" | "h3" | "p" | "ul" | "ol" | "callout";
+  type: "h2" | "h3" | "p" | "ul" | "ol" | "callout" | "html";
   content: string | string[];
 }
 
@@ -75,9 +75,9 @@ export const blogPosts: BlogPost[] = [
         content: "Our Top Pick: IANONI PR8100",
       },
       {
-        type: "p",
+        type: "html",
         content:
-          "The IANONI PR8100 ticks every box above — and at £39.99, it's one of the best-value padel rackets available in the UK right now. Here's why it consistently comes out on top for beginners:",
+          'The <a href="/product/pr8100-red-black" class="text-primary hover:underline font-medium">IANONI PR8100</a> ticks every box above — and at £39.99, it\'s one of the best-value padel rackets available in the UK right now. Here\'s why it consistently comes out on top for beginners:',
       },
       {
         type: "ul",
@@ -596,9 +596,9 @@ export const blogPosts: BlogPost[] = [
         content: "Our Top Pick: IANONI PR8100 (£39.99)",
       },
       {
-        type: "p",
+        type: "html",
         content:
-          "The IANONI PR8100 is the standout option under £50 and genuinely one of the best-value padel rackets available in the UK at any price. Here's why:",
+          'The <a href="/product/pr8100-red-black" class="text-primary hover:underline font-medium">IANONI PR8100</a> is the standout option under £50 and genuinely one of the best-value padel rackets available in the UK at any price. Here\'s why:',
       },
       {
         type: "ul",
@@ -781,9 +781,9 @@ export const blogPosts: BlogPost[] = [
         content: "Getting Started",
       },
       {
-        type: "p",
+        type: "html",
         content:
-          "Most padel venues offer beginner sessions and racket hire. If you want your own racket, you don't need to spend a lot — a quality carbon fibre beginner racket like the IANONI PR8100 at £39.99 is all you need to get started and stay competitive for your first year or more of regular play.",
+          'Most padel venues offer beginner sessions and racket hire. If you want your own racket, you don\'t need to spend a lot — a quality carbon fibre beginner racket like the <a href="/product/pr8100-red-black" class="text-primary hover:underline font-medium">IANONI PR8100 at £39.99</a> is all you need to get started and stay competitive for your first year or more of regular play.',
       },
       {
         type: "p",

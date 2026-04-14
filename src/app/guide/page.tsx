@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import GuidePageComponent from "@/pages/GuidePage";
 
 export const metadata: Metadata = {
-  title: "Padel Beginner's Guide | How to Choose a Padel Racket",
+  title: "Padel Beginner's Guide UK | How to Start Playing & Choose a Racket",
   description:
-    "New to padel? Our beginner's guide covers how to choose the right racket, court rules, and tips to improve fast.",
+    "New to padel in the UK? Our complete beginner's guide covers how to choose the right padel racket, court rules, scoring, and tips to improve fast. Everything in one place.",
   alternates: { canonical: "https://www.ianoni.co.uk/guide" },
 };
 

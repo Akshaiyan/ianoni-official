@@ -30,6 +30,28 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "IANONI",
+  url: "https://www.ianoni.co.uk",
+  logo: "https://www.ianoni.co.uk/favicon.png",
+  description: "IANONI makes premium carbon fibre padel rackets accessible to every player in the UK from £39.99.",
+  contactPoint: { "@type": "ContactPoint", email: "ianoni@tidytrade.ai", contactType: "customer support", areaServed: "GB" },
+};
+
+const webSiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "IANONI",
+  url: "https://www.ianoni.co.uk",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: "https://www.ianoni.co.uk/padel?q={search_term_string}",
+    "query-input": "required name=search_term_string",
+  },
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en-GB" className={inter.variable}>
@@ -38,6 +60,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://siplfligkdeidcousphr.supabase.co" />
         {/* Replace content value with your Google Search Console verification code */}
         {/* <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" /> */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }} />
       </head>
       <body className={inter.className}>
         <Providers>{children}</Providers>
