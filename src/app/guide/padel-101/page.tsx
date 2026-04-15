@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Padel101PageComponent from "@/pages/Padel101Page";
+import Padel101PageComponent from "@/views/Padel101Page";
 
 export const metadata: Metadata = {
   title: "Padel 101: Complete Guide to Padel Rules, Scoring & Equipment UK",

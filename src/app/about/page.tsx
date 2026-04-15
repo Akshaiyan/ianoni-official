@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import AboutPageComponent from "@/pages/AboutPage";
+import AboutPageComponent from "@/views/AboutPage";
 
 export const metadata: Metadata = {
   title: "About IANONI | Premium Padel Rackets Made Accessible",

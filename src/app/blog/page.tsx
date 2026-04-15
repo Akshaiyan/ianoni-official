@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import BlogPageComponent from "@/pages/BlogPage";
+import BlogPageComponent from "@/views/BlogPage";
 
 export const metadata: Metadata = {
   title: "Padel Blog UK | Guides, Racket Reviews & Tips (2026)",

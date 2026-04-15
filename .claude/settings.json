@@ -1,11 +1,13 @@
 {
   "permissions": {
+    "allow": [
+      "Bash(bun add:*)",
+      "Bash(xargs grep:*)",
+      "Bash(xargs sed:*)"
+    ],
     "additionalDirectories": [
       "c:\\Users\\ssuth\\OneDrive\\Documents\\GitHub\\ianoni-blueprint\\src\\app\\blog\\category",
       "c:\\Users\\ssuth\\OneDrive\\Documents\\GitHub\\ianoni-blueprint\\src\\components\\home"
-    ],
-    "allow": [
-      "Bash(bun add:*)"
     ]
   }
 }

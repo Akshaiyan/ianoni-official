@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import PrivacyPageComponent from "@/pages/PrivacyPage";
+import PrivacyPageComponent from "@/views/PrivacyPage";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",

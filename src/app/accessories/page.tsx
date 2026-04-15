@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import CollectionPage from "@/pages/CollectionPage";
+import CollectionPage from "@/views/CollectionPage";
 
 export const metadata: Metadata = {
   title: "Padel Starter Kits & Accessories UK | IANONI",

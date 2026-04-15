@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import ContactPageComponent from "@/pages/ContactPage";
+import ContactPageComponent from "@/views/ContactPage";
 
 export const metadata: Metadata = {
   title: "Contact IANONI | Get in Touch",

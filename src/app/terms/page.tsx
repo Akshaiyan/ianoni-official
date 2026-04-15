@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import TermsPageComponent from "@/pages/TermsPage";
+import TermsPageComponent from "@/views/TermsPage";
 
 export const metadata: Metadata = {
   title: "Terms & Conditions",

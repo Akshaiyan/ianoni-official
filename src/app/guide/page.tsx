@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import GuidePageComponent from "@/pages/GuidePage";
+import GuidePageComponent from "@/views/GuidePage";
 
 export const metadata: Metadata = {
   title: "Padel Beginner's Guide UK | How to Start Playing & Choose a Racket",

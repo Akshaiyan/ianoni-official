@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import IndexPage from "@/pages/Index";
+import IndexPage from "@/views/Index";
 
 export const metadata: Metadata = {
   title: "IANONI | Premium Carbon Fibre Padel Rackets – UK",

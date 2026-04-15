@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import CollectionPage from "@/pages/CollectionPage";
+import CollectionPage from "@/views/CollectionPage";
 
 export const metadata: Metadata = {
   title: "Buy Carbon Fibre Padel Rackets UK | From £39.99 – IANONI",

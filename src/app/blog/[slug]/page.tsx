@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { blogPosts, getBlogPostBySlug } from "@/data/blog";
-import BlogPostPageComponent from "@/pages/BlogPostPage";
+import BlogPostPageComponent from "@/views/BlogPostPage";
 
 export function generateStaticParams() {
   return blogPosts.map((p) => ({ slug: p.slug }));

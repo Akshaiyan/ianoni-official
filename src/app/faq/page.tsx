@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import FAQPageComponent from "@/pages/FAQPage";
+import FAQPageComponent from "@/views/FAQPage";
 
 export const metadata: Metadata = {
   title: "Padel Racket FAQs | Shipping, Warranty & Specs Answered",

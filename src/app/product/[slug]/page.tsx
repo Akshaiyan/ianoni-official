@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { products, getProductBySlug } from "@/data/products";
-import ProductPageComponent from "@/pages/ProductPage";
+import ProductPageComponent from "@/views/ProductPage";
 
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
