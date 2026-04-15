@@ -153,7 +153,7 @@ export function ProductEditorial() {
               className="absolute top-10 right-0 lg:right-10 w-[200px] md:w-[280px] lg:w-[320px] z-10"
             >
               <img
-                src={pr8100WithBall}
+                src={pr8100WithBall.src}
                 alt="PR8100 with ball"
                 className="w-full h-auto object-contain opacity-50"
                 style={{
@@ -175,7 +175,7 @@ export function ProductEditorial() {
                 {/* Main product image */}
                 <div className="relative w-[280px] md:w-[380px] lg:w-[450px]">
                   <img
-                    src={pr8100NoBg}
+                    src={pr8100NoBg.src}
                     alt="PR8100 Padel Racket"
                     className="w-full h-auto object-contain"
                     style={{
