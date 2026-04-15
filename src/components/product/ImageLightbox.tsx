@@ -24,20 +24,20 @@ export function ImageLightbox({ images, initialIndex, productName, open, onClose
   const panStart = useRef({ x: 0, y: 0 });
   const translateStart = useRef({ x: 0, y: 0 });
 
-  // Reset when opening or changing image
-  useEffect(() => {
-    if (open) {
-      setCurrentIndex(initialIndex);
-      resetZoom();
-    }
-  }, [open, initialIndex]);
-
   const resetZoom = useCallback(() => {
     setScale(1);
     setTranslate({ x: 0, y: 0 });
     lastTouchDistance.current = null;
     lastTouchCenter.current = null;
   }, []);
+
+  // Reset when opening or changing image
+  useEffect(() => {
+    if (open) {
+      setCurrentIndex(initialIndex);
+      resetZoom();
+    }
+  }, [open, initialIndex, resetZoom]);
 
   const clampTranslate = useCallback((x: number, y: number, s: number) => {
     if (s <= 1) return { x: 0, y: 0 };
