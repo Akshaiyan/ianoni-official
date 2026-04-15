@@ -348,7 +348,7 @@ export function ImageLightbox({ images, initialIndex, productName, open, onClose
                     }`}
                   >
                     <img
-                      src={img}
+                      src={img.src}
                       alt={`Thumbnail ${i + 1}`}
                       className="w-full h-full object-contain bg-white/5 p-1"
                       draggable={false}

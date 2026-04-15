@@ -132,7 +132,7 @@ export function WhyIanoni() {
               >
                 <div className="relative w-4/5">
                   <img
-                    src={pr8100Detail}
+                    src={pr8100Detail.src}
                     alt="Racket detail"
                     className="w-full h-auto object-contain"
                   />
