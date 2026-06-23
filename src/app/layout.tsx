@@ -57,6 +57,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en-GB" className={inter.variable}>
       <head>
         <link rel="icon" href="/favicon.png" type="image/png" />
+        <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
         <link rel="preconnect" href="https://siplfligkdeidcousphr.supabase.co" />
         {/* Replace content value with your Google Search Console verification code */}
         {/* <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" /> */}

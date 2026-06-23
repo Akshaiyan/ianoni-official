@@ -40,6 +40,7 @@ export function Footer() {
         <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-muted-foreground text-xs">© {new Date().getFullYear()} IANONI. All rights reserved.</p>
           <div className="flex items-center gap-6">
+            <Link href="/returns" className="text-muted-foreground text-xs hover:text-foreground transition-colors">Returns</Link>
             <Link href="/privacy" className="text-muted-foreground text-xs hover:text-foreground transition-colors">Privacy</Link>
             <Link href="/terms" className="text-muted-foreground text-xs hover:text-foreground transition-colors">Terms</Link>
           </div>
