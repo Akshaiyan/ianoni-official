@@ -1,11 +1,1 @@
-{
-  "version": 4,
-  "routes": {},
-  "dynamicRoutes": {},
-  "notFoundRoutes": [],
-  "preview": {
-    "previewModeId": "6a09812f0cdad6ee07c366383b0ef121",
-    "previewModeSigningKey": "e9220648f78f26309603b9e40bf1a07101d66a4fde66ed8395e6133983c4ed3a",
-    "previewModeEncryptionKey": "1d6bc5a54dbcfa6b621d9cfd122ff4d4878ac6aa466731f0f3114e272c733372"
-  }
-}
+{"version":4,"routes":{"/product/pr8100-red-black":{},"/product/pr8100-blue-pink":{},"/product/pr8100-blue-orange":{},"/product/pr8200-blue-stripe":{},"/product/pr8200-grey-stripe":{},"/product/super-power-pink":{},"/product/starter-kit-blue-orange":{},"/product/starter-kit-blue-pink":{},"/product/starter-kit-black-sky":{},"/product/starter-kit-red-black":{},"/product/starter-kit-red-black-doubles":{},"/product/ianoni-pro-padel-balls":{},"/product/ianoni-pro-s-padel-balls":{},"/product/ianoni-pro-padel-balls-3pack":{},"/product/ianoni-pro-s-padel-balls-3pack":{}},"dynamicRoutes":{"/product/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/product/[slug]","routeRegex":"^\\/product\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"a06d5947068eb19362bc5d1d71f528db","previewModeSigningKey":"074346c61a5d907e103a878163a9e8b80618b3337673316923ac6580d099b1e6","previewModeEncryptionKey":"e39e7e7d4ad6fd2cb12b3892b2d5b055ddd03f10ae99cbf02bd699fd1080d754"}}

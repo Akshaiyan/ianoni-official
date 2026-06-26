@@ -230,29 +230,29 @@ export default function ProductPage() {
         schema={[productSchema, breadcrumbSchema]}
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <div className="pt-24">
+      <div className="pt-24 overflow-x-hidden">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
-          <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-8">
-            <Link href="/" className="hover:text-primary">Home</Link>
-            <ChevronRight className="h-4 w-4" />
-            <Link href={`/${categoryPath}`} className="hover:text-primary capitalize">
+          <nav className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground mb-8">
+            <Link href="/" className="hover:text-primary shrink-0">Home</Link>
+            <ChevronRight className="h-4 w-4 shrink-0" />
+            <Link href={`/${categoryPath}`} className="hover:text-primary capitalize shrink-0">
               {isStarterKit ? 'Starter Kits & Accessories' : 'Padel Rackets'}
             </Link>
-            <ChevronRight className="h-4 w-4" />
-            <span className="text-foreground font-medium">{product.name}{product.colorVariant ? ` ${product.colorVariant}` : ''}</span>
+            <ChevronRight className="h-4 w-4 shrink-0" />
+            <span className="text-foreground font-medium truncate">{product.name}{product.colorVariant ? ` ${product.colorVariant}` : ''}</span>
           </nav>
 
           {/* Product Section */}
           <div className="grid lg:grid-cols-2 gap-12 mb-20">
             {/* Image Gallery */}
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="space-y-4"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="space-y-4 min-w-0"
             >
               <div
-                className="aspect-square rounded-3xl bg-white flex items-center justify-center relative overflow-hidden p-8 cursor-zoom-in"
+                className="w-full h-72 sm:h-auto sm:aspect-square rounded-3xl bg-white flex items-center justify-center relative overflow-hidden p-4 sm:p-8 cursor-zoom-in"
                 onClick={() => setLightboxOpen(true)}
               >
                 <motion.img
@@ -289,9 +289,9 @@ export default function ProductPage() {
 
             {/* Product Info */}
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="space-y-6"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="space-y-6 min-w-0"
             >
               <div>
                 <h1 className="text-3xl md:text-4xl font-bold">{product.name}</h1>
